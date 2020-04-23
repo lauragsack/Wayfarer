@@ -20,7 +20,7 @@ class Navbar extends Component {
   handleSwitchSL = () => this.setState({signup: false, login: true});
   handleSwitchLS = () => this.setState({login: false, signup: true});
 
-  render() {
+  render(props) {
     const {signup,login} = this.state;
     return (
     <>
@@ -35,25 +35,28 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarsExample04">
             <ul className="navbar-nav ml-auto">
 
-              {/*Signup Modal Link*/}
+              { this.props.currentUser ?
+              
+              <>
               <li className="nav-item">
                 <a className="nav-link btn" onClick={this.handleSignUp}>MSignup</a>
               </li>
 
-              {/*Login Modal Link*/}
+              
               <li className="nav-item">
                 <a className="nav-link btn" onClick={this.handleLogin}>MLogin</a>
               </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">Signup</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">Login</NavLink>
-              </li>
-              <li className="nav-item">
+            </>
+            : 
+              <>
+            <li className="nav-item">
                 <NavLink className="nav-link" to="/profile">Profile</NavLink>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/logout" onClick={this.props.logout}>Logout</a>
+              </li>
+              </>
+          }
             </ul>
           </div>
         </div>
@@ -71,9 +74,11 @@ class Navbar extends Component {
 {/*          <button variant="secondary" onClick={this.handleCloseSignUp}>
             Close
           </button>*/}
-          <button variant="primary" onClick={this.handleSwitchSL}>
-            Switch
-          </button>
+          
+          <p>Already have an account?</p>
+          <a className="btn text-info" onClick={this.handleSwitchSL}>
+            <u>Log in</u>
+          </a>
         </Modal.Footer>
       </Modal>
 
@@ -89,9 +94,10 @@ class Navbar extends Component {
 {/*          <button variant="secondary" onClick={this.handleCloseLogin}>
             Close
           </button>*/}
-          <button variant="primary" onClick={this.handleSwitchLS}>
-            Switch
-          </button>
+          <p>Not signed up yet?</p>
+          <a className="btn text-info" onClick={this.handleSwitchLS}>
+            <u>Sign up</u>
+          </a>
         </Modal.Footer>
       </Modal>
     </>
