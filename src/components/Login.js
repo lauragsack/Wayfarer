@@ -15,12 +15,10 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        UserModel.create(this.state)
+        UserModel.login(this.state)
             .then(res => {
-                this.setState({
-
-                })
-                this.props.history.push('/login')
+                this.props.setCurrentUser(res.data.data)
+                this.props.history.push("/profile")
             })
             .catch(err => console.log(err))
         }
@@ -30,19 +28,8 @@ class Login extends Component {
             <div className="container mt-4">
                 <div className="row">
                     <div className="col-md-4 offset-md-4">
-                        <h4 className="mb-3">Sign up</h4>
+                        <h4 className="mb-3">Log in</h4>
                         <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="name">Name</label>
-                                <input
-                                    onChange={this.handleChange}
-                                    className="form control form-control-lg"
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={this.state.name}
-                                />
-                            </div>
                             <div className="form-group">
                                 <label htmlFor="name">Email</label>
                                 <input
@@ -55,7 +42,7 @@ class Login extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="name">Password</label>
+                                <label htmlFor="password">Password</label>
                                 <input
                                     onChange={this.handleChange} className="form control form-control-lg"
                                     className="form control form-control-lg"
@@ -65,29 +52,10 @@ class Login extends Component {
                                     value={this.state.password}
                                 />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="name">Confirm Password</label>
-                                <input
-                                    onChange={this.handleChange} className="form control form-control-lg"
-                                    className="form control form-control-lg"
-                                    type="password"
-                                    id="password2"
-                                    name="password2"
-                                    value={this.state.password}
-                                />
-                            </div>
+                            <button className="btn btn-primary float-right" type="submit">Log in</button>
                         </form>
                     </div>
                 </div>
-            </div>
-        );
-    }
-}
-
-    render() {
-        return (
-            <div>
-                
             </div>
         );
     }
