@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom'
 import Routes from './config/routes'
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
+import UserModel from './models/user'
 
 
-function App() {
-  return (
-    <>
-      <Navbar/>
-      <div>
-        <Routes />
-      </div>
-    </>
-  );
-}
+class App extends Component {
 
-export default App;
+  
+  render() {
+    return (
+      <>
+        <Navbar/>
+        <div>
+          <Routes />
+        </div>
+      </>
+    );
+  }
+  }
+
+export default withRouter(App);
