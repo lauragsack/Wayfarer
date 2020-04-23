@@ -34,7 +34,7 @@ class Signup extends Component {
         return (
             <div className="container mt-4">
                 <div className="row">
-                    <div className="col-md-4 offset-md-4">
+                    <div className="col-md-4 offset-md-3">
                         <h4 className="mb-3">Sign up</h4>
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
@@ -78,7 +78,7 @@ class Signup extends Component {
                                     type="password"
                                     id="password2"
                                     name="password2"
-                                    value={this.state.password}
+                                    value={this.state.password2}
                                 />
                             </div>
                             <button className="btn btn-primary float-right" type="submit">Sign up</button>
