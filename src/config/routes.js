@@ -7,11 +7,14 @@ import Login from '../components/Login'
 import Profile from '../components/Profile'
 
 
+
 export default () => (
     <Switch>
         <Route exact path="/" component={ Home }/>
         <Route path="/signup" component={ Signup }/>
         <Route path="/login" component={ Login } />
         <Route path="/profile" component={ Profile }/>
+
+
     </Switch>
 )
