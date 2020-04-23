@@ -28,6 +28,7 @@ class Signup extends Component {
                 this.props.history.push('/login')
             })
             .catch(err => console.log(err))
+            // add a user error message
         }
 
     render() {
@@ -49,7 +50,7 @@ class Signup extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="name">Email</label>
+                                <label htmlFor="email">Email</label>
                                 <input
                                     onChange={this.handleChange} className="form control form-control-lg"
                                     className="form control form-control-lg"
@@ -60,7 +61,7 @@ class Signup extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="name">Password</label>
+                                <label htmlFor="password">Password</label>
                                 <input
                                     onChange={this.handleChange} className="form control form-control-lg"
                                     className="form control form-control-lg"
@@ -71,7 +72,7 @@ class Signup extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="name">Confirm Password</label>
+                                <label htmlFor="password2">Confirm Password</label>
                                 <input
                                     onChange={this.handleChange} className="form control form-control-lg"
                                     className="form control form-control-lg"
