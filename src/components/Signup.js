@@ -81,6 +81,7 @@ class Signup extends Component {
                                     value={this.state.password}
                                 />
                             </div>
+                            <button className="btn btn-primary float-right" type="submit">Sign up</button>
                         </form>
                     </div>
                 </div>
