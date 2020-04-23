@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import UserModel from '../models/user';
 
 let user1={
 	name:'JC',
@@ -38,13 +39,13 @@ class Profile extends Component {
 	      <div className="container mt-4">
 	        <div className="row">
 	          <div className="col-md-4 offset-md-4">
-	            <h4 className="mb-3">Register</h4>
+	            <h4 className="mb-3">Profile</h4>
 	            <form onSubmit={this.handleSubmit}>
 	              <div className="form-group">
 	                <label htmlFor="name">Name</label>
 	                <input 
-	                    onChange={this.handleChange} 
-	                    className="form-control form-control-lg" 
+	                    className="form-control form-control-lg"
+	                    readOnly
 	                    type="text" 
 	                    id="name" 
 	                    name="name" 
@@ -52,12 +53,12 @@ class Profile extends Component {
 	                />
 	              </div>
 	              <div className="form-group">
-	                <label htmlFor="name">city</label>
-	                <input onChange={this.handleChange} className="form-control form-control-lg disabled" type="email" id="email" name="email" value={this.state.email} />
+	                <label htmlFor="name">Current city</label>
+	                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="city" name="city" value={this.state.city} />
 	              </div>
 	              <div className="form-group">
 	                <label htmlFor="name">Post</label>
-	                <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password" name="password" value={this.state.password} />
+	                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="post" name="post" value={this.state.post} />
 	              </div>
 
 	              <button className="btn btn-primary float-right" type="submit">Register</button>

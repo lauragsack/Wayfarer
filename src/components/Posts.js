@@ -1,4 +1,5 @@
 import React from 'react';
+import Post from './Post';
 
 const Posts = (props) => {
     let posts = props.posts.map((post) => {

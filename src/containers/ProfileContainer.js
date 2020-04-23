@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UserModel from '../models/user';
+import Profile from '../components/Profile';
 
 let user1={
 	name:'JC',
@@ -8,15 +8,16 @@ let user1={
 }
 
 class ProfileContainer extends Component {
-	state = {
-		name: user1.name,
-		city: user1.city,
-		posts:[],
-	}
 
 	render() {
 		return(
+			<div>
+				<Profile
+					name="JC"
+					city="SAN BRUNO" />
+			</div>
 			)
 	}
 }
 
+export default ProfileContainer

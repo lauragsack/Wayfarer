@@ -50,8 +50,8 @@ class PostsContainer extends Component {
         PostModel.update(post)
             .then((res) => {
                 let posts = this.state.posts;
-                todos.find(isUpdatedPost).title = post.title;
-                todos.find(isUpdatedPost).content = post.content;
+                posts.find(isUpdatedPost).title = post.title;
+                posts.find(isUpdatedPost).content = post.content;
                 this.setState({posts: posts})
             });
     }
