@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import UserModel from '../models/user';
 import PostsContainer from '../containers/PostsContainer';
 import ProfileForm from './ProfileForm';
-
 
 class Profile extends Component {
     state = {
@@ -14,14 +12,12 @@ class Profile extends Component {
 
     render() {
         return (
-            // <div className="container mt-4">
-            //     <p>Name: {this.state.name}</p>
-            //     <p>City: {this.state.city}</p>
-            //     {/* <p>Date Joined: {this.state.city}</p> */}
-            //     <p>Posts: {this.state.posts}</p>
-            //     <button>Edit</button>
-            // </div>
             <div className="container mt-4">
+                <p>Name: {this.state.name}</p>
+                <p>City: {this.state.city}</p>
+                {/* <p>Date Joined: {this.state.city}</p> */}
+                {/* <p>Posts: {this.state.posts}</p>
+                <button>Edit</button> */}
                 <ProfileForm
                     name={this.state.name}
                     city={this.state.city}
@@ -32,6 +28,7 @@ class Profile extends Component {
         );
     }
 }
+
 
 export default Profile;
 
