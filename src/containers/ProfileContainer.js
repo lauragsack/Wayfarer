@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Profile from '../components/Profile';
+import ProfileModel from '../models/profile';
 
 
 class ProfileContainer extends Component {
