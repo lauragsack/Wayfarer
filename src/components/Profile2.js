@@ -11,7 +11,7 @@ class Profile2 extends Component {
     state = {
         name:user1.name,
         city:user1.city,
-        post:[],
+        posts:[],
     };
 
 	handleChange = (event) => {
@@ -27,7 +27,7 @@ class Profile2 extends Component {
         this.setState({
         	name: '',
 			city: '',
-			post: [],
+			posts: [],
         })
         this.props.history.push('/login')
       	})

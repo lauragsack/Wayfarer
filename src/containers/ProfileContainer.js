@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Profile from '../components/Profile';
-import profile from '../models/profile';
+import ProfileModel from '../models/profile';
 
 let user1={
 	name:'JC',
