@@ -46,11 +46,6 @@ class ProfileForm extends Component {
                   <label htmlFor="name">Current city</label>
                   <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="city" name="city" value={this.state.city} />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="name">Post</label>
-                  
-                </div>
-
                 <button className="btn btn-primary float-right" type="submit">Save</button>
               </form>
             </div>
