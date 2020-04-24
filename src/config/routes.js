@@ -30,6 +30,7 @@ export default (props) => (
         	return<ProfileContainer
         		{...routeProps}
         		currentUser={props.currentUser}
+                name={props.name}
         		/>
         } }/>
 

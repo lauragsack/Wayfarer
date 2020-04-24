@@ -8,6 +8,7 @@ import UserModel from './models/user'
 class App extends Component {
   state = {
     currentUser: localStorage.getItem("uid"),
+    name: "JJC"
   }
 
   setCurrentUser = (userId) => {
@@ -41,6 +42,7 @@ class App extends Component {
           <Routes 
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}
+            name={this.state.name}
           />
         </div>
       </>

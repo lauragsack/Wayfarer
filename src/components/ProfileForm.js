@@ -38,7 +38,8 @@ class ProfileForm extends Component {
                       className="form-control form-control-lg"
                       type="text" 
                       id="name" 
-                      name="name" 
+                      name="name"
+                      readOnly
                       value={this.state.name}
                   />
                 </div>

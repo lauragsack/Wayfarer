@@ -3,14 +3,16 @@ import Profile from '../components/Profile';
 import ProfileModel from '../models/profile';
 
 
+
 class ProfileContainer extends Component {
 
 	state={
-	name: this.props.name,
+	name: this.props.currentUser.name,
 	city: this.props.city,
 	date: this.props.date,
 	posts: this.props.posts,
 	}
+
 
 	updateProfile = (user) => {
         const isUpdatedUser = p => {

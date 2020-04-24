@@ -25,6 +25,7 @@ class Signup extends Component {
                     password: "",
                     password2: ""
                 })
+                console.log(res.data)
                 this.props.setCurrentUser(res.data.data)
                 this.props.history.push("/profile")
                 // this.handleCloseModal();  this isn't working
