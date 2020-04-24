@@ -18,8 +18,10 @@ export default () => (
         <Route exact path="/" component={ Home }/>
         <Route path="/signup" component={ Signup }/>
         <Route path="/login" component={ Login } />
-        {/* might be able to delete below route for component={ Profile }*/}
-        <Route path="/profile" component={ Profile }/>
+
+        {/* might be able to delete below route */}
+        {/*<Route path="/profile" component={ Profile }/>*/}
+
         <Route path="/profile" component={ ProfileContainer }/>
         {/* start - can delete these after testing */}
         <Route path="/profile2" component={ Profile2 }/>

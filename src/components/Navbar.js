@@ -11,6 +11,7 @@ class Navbar extends Component {
   state = {
       signup: false,
       login: false,
+      currentUser: this.props.currentUser
     };
 
   handleCloseSignUp = () => this.setState({signup: false});
