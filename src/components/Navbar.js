@@ -88,7 +88,7 @@ class Navbar extends Component {
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Login />
+          <Login history={this.props.history} setCurrentUser={this.props.setCurrentUser} />
         </Modal.Body>
         <Modal.Footer>
 {/*          <button variant="secondary" onClick={this.handleCloseLogin}>
