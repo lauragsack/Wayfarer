@@ -37,18 +37,6 @@ class Navbar extends Component {
             <ul className="navbar-nav ml-auto">
 
               { this.props.currentUser ?
-              
-              <>
-              <li className="nav-item">
-                <a className="nav-link btn" onClick={this.handleSignUp}>MSignup</a>
-              </li>
-
-              
-              <li className="nav-item">
-                <a className="nav-link btn" onClick={this.handleLogin}>MLogin</a>
-              </li>
-            </>
-            : 
               <>
             <li className="nav-item">
                 <NavLink className="nav-link" to="/profile">Profile</NavLink>
@@ -57,6 +45,17 @@ class Navbar extends Component {
                 <a className="nav-link" href="/logout" onClick={this.props.logout}>Logout</a>
               </li>
               </>
+            : 
+            <>
+              <li className="nav-item">
+                <a className="nav-link btn" onClick={this.handleSignUp}>Signup</a>
+              </li>
+
+              
+              <li className="nav-item">
+                <a className="nav-link btn" onClick={this.handleLogin}>Login</a>
+              </li>
+            </>
           }
             </ul>
           </div>

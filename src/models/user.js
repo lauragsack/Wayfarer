@@ -4,7 +4,7 @@ const REACT_APP_API_URL = "http://localhost:3001/api/v1"
 
 export default class UserModel {
     static create = (data) => {
-        let request = axios.post(`${REACT_APP_API_URL}/auth/signup`, data)
+        let request = axios.post(`${REACT_APP_API_URL}/auth/register`, data)
         return request
     }
 
