@@ -34,6 +34,8 @@ class App extends Component {
         <Navbar
           currentUser={this.state.currentUser}
           logout={this.logout}
+          history={this.props.history}
+          setCurrentUser={this.setCurrentUser}
         />
         <div className="container">
           <Routes 
