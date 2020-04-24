@@ -4,31 +4,31 @@ import Routes from './config/routes'
 import Navbar from './components/Navbar'
 import UserModel from './models/user'
 
-
 class App extends Component {
   state = {
-    currentUser: localStorage.getItem("uid"),
-    name: "JJC"
+    currentUser: JSON.parse(localStorage.getItem("user")),
   }
 
-  setCurrentUser = (userId) => {
-    this.setState({ currentUser: userId })
-    localStorage.setItem("uid", userId)
+  setCurrentUser = (user) => {
+    this.setState({ currentUser: user })
+    localStorage.setItem("user", JSON.stringify(user))
+    localStorage.setItem("uid", user.id)
+    localStorage.setItem("uname", user.name)
   }
 
   logout = (event) => {
     event.preventDefault();
-    
-    localStorage.removeItem("uid")
+
+    localStorage.removeItem("user")
     UserModel.logout()
       .then(res => {
         console.log(res)
         this.setState({ currentUser: null })
-        this.props.history.push("/login")
+        this.props.history.push("/")
       })
       .catch(err => console.log(err))
   }
-  
+
   render() {
     return (
       <>
@@ -39,7 +39,7 @@ class App extends Component {
           setCurrentUser={this.setCurrentUser}
         />
         <div className="container">
-          <Routes 
+          <Routes
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}
             name={this.state.name}

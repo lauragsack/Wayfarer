@@ -10,31 +10,36 @@ import PostsContainer from '../containers/PostsContainer'
 
 
 export default (props) => (
-    <Switch>
-        <Route exact path="/" component={ Home }/>
-        <Route path="/signup" component={ Signup }/>
-
-        <Route path="/login" render={ (routeProps) => {
-      // An example of adding props to a component rendered by react router
-            return <Login 
-                { ...routeProps }
-                currentUser={props.currentUser}
-                setCurrentUser={props.setCurrentUser}
-                history={props.history}
-              /> 
-            } } />  
-        {/* might be able to delete below route */}
-        {/*<Route path="/profile" component={ Profile }/>*/}
-
-        <Route path="/profile" render={ (routeProps) => {
-        	return<ProfileContainer
-        		{...routeProps}
-        		currentUser={props.currentUser}
-                name={props.name}
-        		/>
-        } }/>
-
-        <Route path="/posts" component={ PostsContainer }/>
-
-    </Switch>
+  <Switch>
+    <Route exact path="/" component={ Home }/>
+    <Route path="/profile">
+      <ProfileContainer currentUser={props.currentUser} />
+    </Route>
+    <Route path="/posts" component={ PostsContainer }/>
+  </Switch>
 )
+
+
+
+
+// <Route path="/signup" component={ Signup }/>
+
+//  <Route path="/login" render={ (routeProps) => {
+// // An example of adding props to a component rendered by react router
+//       return <Login
+//           { ...routeProps }
+//           currentUser={props.currentUser}
+//           setCurrentUser={props.setCurrentUser}
+//           history={props.history}
+//         />
+//       } } />
+{/* might be able to delete below route */}
+{/*<Route path="/profile" component={ Profile }/>*/}
+
+// <Route path="/profile" render={ (routeProps) => {
+// 	return<ProfileContainer
+// 		{...routeProps}
+// 		currentUser={props.currentUser}
+//         name={props.name}
+// 		/>
+// } }/>

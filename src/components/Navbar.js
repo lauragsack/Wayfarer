@@ -31,7 +31,7 @@ class Navbar extends Component {
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-  
+
   ​
           <div className="collapse navbar-collapse" id="navbarsExample04">
             <ul className="navbar-nav ml-auto">
@@ -45,15 +45,15 @@ class Navbar extends Component {
                 <a className="nav-link" href="/logout" onClick={this.props.logout}>Logout</a>
               </li>
               </>
-            : 
+            :
             <>
               <li className="nav-item">
-                <a className="nav-link btn" onClick={this.handleSignUp}>Signup</a>
+                <button className="nav-link btn" onClick={this.handleSignUp}>Signup</button>
               </li>
 
-              
+
               <li className="nav-item">
-                <a className="nav-link btn" onClick={this.handleLogin}>Login</a>
+                <button className="nav-link btn" onClick={this.handleLogin}>Login</button>
               </li>
             </>
           }
@@ -74,11 +74,11 @@ class Navbar extends Component {
 {/*          <button variant="secondary" onClick={this.handleCloseSignUp}>
             Close
           </button>*/}
-          
+
           <p>Already have an account?</p>
-          <a className="btn text-info" onClick={this.handleSwitchSL}>
+          <button className="btn text-info" onClick={this.handleSwitchSL}>
             <u>Log in</u>
-          </a>
+          </button>
         </Modal.Footer>
       </Modal>
 
@@ -95,9 +95,9 @@ class Navbar extends Component {
             Close
           </button>*/}
           <p>Not signed up yet?</p>
-          <a className="btn text-info" onClick={this.handleSwitchLS}>
+          <button className="btn text-info" onClick={this.handleSwitchLS}>
             <u>Sign up</u>
-          </a>
+          </button>
         </Modal.Footer>
       </Modal>
     </>

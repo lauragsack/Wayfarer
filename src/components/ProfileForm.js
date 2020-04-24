@@ -34,10 +34,10 @@ class ProfileForm extends Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="name">Name</label>
-                  <input 
+                  <input
                       className="form-control form-control-lg"
-                      type="text" 
-                      id="name" 
+                      type="text"
+                      id="name"
                       name="name"
                       readOnly
                       value={this.state.name}
