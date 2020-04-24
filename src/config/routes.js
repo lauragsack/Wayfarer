@@ -16,7 +16,7 @@ export default () => (
         <Route path="/signup" component={ Signup }/>
         <Route path="/login" component={ Login } />
         {/* might be able to delete below route */}
-        <Route path="/profile" component={ Profile }/>
+        {/*<Route path="/profile" component={ Profile }/>*/}
         <Route path="/profile" component={ ProfileContainer }/>
         <Route path="/posts" component={ PostsContainer }/>
 

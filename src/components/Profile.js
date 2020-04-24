@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
 import UserModel from '../models/user';
+import PostsContainer from '../containers/PostsContainer';
 
-let user1={
-	name:'JC',
-	city:'San Bruno',
-	posts:[],
-}
 
 class Profile extends Component {
     state = {
-        name:user1.name,
-        city:user1.city,
-        post:[],
+        name:this.props.name,
+        city:this.props.city,
+        post:this.props.post,
     };
 
 	handleChange = (event) => {
@@ -45,7 +41,6 @@ class Profile extends Component {
 	                <label htmlFor="name">Name</label>
 	                <input 
 	                    className="form-control form-control-lg"
-	                    readOnly
 	                    type="text" 
 	                    id="name" 
 	                    name="name" 
@@ -58,10 +53,10 @@ class Profile extends Component {
 	              </div>
 	              <div className="form-group">
 	                <label htmlFor="name">Post</label>
-	                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="post" name="post" value={this.state.post} />
+	                <PostsContainer />
 	              </div>
 
-	              <button className="btn btn-primary float-right" type="submit">Register</button>
+	              <button className="btn btn-primary float-right" type="submit">Save</button>
 	            </form>
 	          </div>
 	        </div>

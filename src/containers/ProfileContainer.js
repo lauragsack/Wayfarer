@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
 import Profile from '../components/Profile';
 
-let user1={
-	name:'JC',
-	city:'San Bruno',
-	posts:[],
-}
 
 class ProfileContainer extends Component {
+
+	state={
+	name: this.props.name,
+	city:'Sannnn Bruno',
+}
 
 	render() {
 		return(
 			<div>
 				<Profile
-					name="JC"
-					city="SAN BRUNO" />
+					name={this.state.name}
+					city={this.state.city}
+					 />
+
 			</div>
 			)
 	}
