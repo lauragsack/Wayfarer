@@ -35,12 +35,6 @@ class Profile extends Component {
         </div>
       )
     }
-    // else{
-    //   return (
-    //
-    //
-    //   );
-    // }
   }
 }
 
