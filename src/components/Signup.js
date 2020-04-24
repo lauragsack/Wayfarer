@@ -25,7 +25,9 @@ class Signup extends Component {
                     password: "",
                     password2: ""
                 })
-                this.props.history.push('/login')
+                this.props.setCurrentUser(res.data.data)
+                this.props.history.push("/profile")
+                // this.handleCloseModal();  this isn't working
             })
             .catch(err => console.log(err))
             // add a user error message

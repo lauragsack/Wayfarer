@@ -20,6 +20,7 @@ export default (props) => (
                 { ...routeProps }
                 currentUser={props.currentUser}
                 setCurrentUser={props.setCurrentUser}
+                history={props.history}
               /> 
             } } />  
         {/* might be able to delete below route */}
