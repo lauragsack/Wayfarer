@@ -85,7 +85,7 @@ class Signup extends Component {
                   value={this.state.password2}
                   />
               </div>
-              <button className="btn btn-primary float-right" type="submit">Sign up</button>
+              <button className="btn btn-primary float-right" type="submit" onClick={this.props.onClick}>Sign up</button>
             </form>
           </div>
         </div>

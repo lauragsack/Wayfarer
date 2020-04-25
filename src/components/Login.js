@@ -53,7 +53,7 @@ class Login extends Component {
                   value={this.state.password}
                   />
               </div>
-              <button className="btn btn-primary float-right" type="submit">Log in</button>
+              <button className="btn btn-primary float-right" type="submit" onClick={this.props.onClick}>Log in</button>
             </form>
           </div>
         </div>

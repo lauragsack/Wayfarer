@@ -17,7 +17,7 @@ class Profile extends Component {
         <div className="container mt-4">
           <ProfileForm
             name={this.state.name}
-            city={this.state.city.name}
+            city={this.state.city}
             posts={this.state.posts}
             updateProfile={this.props.updateProfile}
             />
@@ -28,7 +28,7 @@ class Profile extends Component {
       return(
         <div className="container mt-4">
           <p>Name: {this.state.name}</p>
-          <p>City: {this.state.city.name}</p>
+          <p>City: {this.state.city}</p>
           {/* <p>Date Joined: {this.state.city}</p> */}
           <p>Posts: {this.state.posts}</p>
           <button>Edit</button>
