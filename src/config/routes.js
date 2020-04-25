@@ -15,7 +15,7 @@ export default (props) => (
         setCurrentUser={props.setCurrentUser}
       />
     </Route>
-    <Route path="/posts" component={ PostsContainer }/>
+    <Route exact path="/posts" component={ PostsContainer }/>
     <Route path="/posts/:id" component={ PostShow }/>
   </Switch>
 );
