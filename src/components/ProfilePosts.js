@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PostModel from '../models/post';
-import Post from '../components/Post'
+import Post from '../components/Post';
 
 class ProfilePosts extends Component {
     state = {

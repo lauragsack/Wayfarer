@@ -18,8 +18,8 @@ export default class PostModel {
       return request
   }
 
-  static show = (post) => {
-    let request = axios.get(`${REACT_APP_API_URL}/${post._id}`, post);
+  static show = (postId) => {
+    let request = axios.get(`${REACT_APP_API_URL}/${postId}`);
     return request
 }
 
@@ -29,7 +29,6 @@ export default class PostModel {
     });
     return request
 }
-
 
   static all = () => {
   	let request = axios.get(`${REACT_APP_API_URL}`)
