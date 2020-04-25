@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Post = (props) => {
+const PostShow = (props) => {
   return (
     <div className="card">
-      <h5 className="card-header">
-        <a href="/posts/:id">{props.post.title}</a>
-      </h5>
+      <h5 className="card-header">{props.post.title}</h5>
       <div class="card-body">
         <p class="card-text">{props.post.content}</p>
       </div>
@@ -16,4 +14,4 @@ const Post = (props) => {
   )
 }
 
-export default Post;
+export default PostShow;
