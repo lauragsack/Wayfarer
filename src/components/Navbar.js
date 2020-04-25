@@ -41,6 +41,11 @@ class Navbar extends Component {
             <li className="nav-item">
                 <NavLink className="nav-link" to="/profile">Profile</NavLink>
               </li>
+
+              <li className= "nav-item">
+                <NavLink className="nav-link" to="/city/1">City:SF</NavLink>
+                </li>
+
               <li className="nav-item">
                 <a className="nav-link" href="/logout" onClick={this.props.logout}>Logout</a>
               </li>
