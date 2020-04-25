@@ -22,7 +22,6 @@ class App extends Component {
     localStorage.removeItem("user")
     UserModel.logout()
       .then(res => {
-        console.log(res)
         this.setState({ currentUser: null })
         this.props.history.push("/")
       })
