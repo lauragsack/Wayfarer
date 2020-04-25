@@ -26,7 +26,7 @@ class ProfileShow extends Component {
             <div className="form-group">
               <label htmlFor="city">Current city</label>
               <div className="form-control form-control-lg border-0">
-                {this.state.user.city}
+                {this.state.user.city.name}
               </div>
             </div>
           </form>
