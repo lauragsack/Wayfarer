@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserModel from '../models/user';
+import './styles.css'
 
 class Signup extends Component {
   state = {
@@ -85,7 +86,7 @@ class Signup extends Component {
                   value={this.state.password2}
                   />
               </div>
-              <button className="btn btn-primary float-right" type="submit" onClick={this.props.onClick}>Sign up</button>
+              <button className="btn btn-primary pull-left" type="submit" onClick={this.props.onClick}>Sign up</button>
             </form>
           </div>
         </div>

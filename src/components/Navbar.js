@@ -64,17 +64,10 @@ class Navbar extends Component {
 
       {/*Signup Modal*/}
       <Modal show={signup} onHide={this.handleCloseSignUp}>
-        <Modal.Header closeButton>
-          <Modal.Title>Signup</Modal.Title>
-        </Modal.Header>
         <Modal.Body>
           <Signup history={this.props.history} setCurrentUser={this.props.setCurrentUser} onClick={this.handleCloseSignUp}/>
         </Modal.Body>
         <Modal.Footer>
-{/*          <button variant="secondary" onClick={this.handleCloseSignUp}>
-            Close
-          </button>*/}
-
           <p>Already have an account?</p>
           <button className="btn text-info" onClick={this.handleSwitchSL}>
             <u>Log in</u>
@@ -84,16 +77,10 @@ class Navbar extends Component {
 
       {/*Login Modal*/}
       <Modal show={login} onHide={this.handleCloseLogin}>
-        <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
-        </Modal.Header>
         <Modal.Body>
           <Login history={this.props.history} setCurrentUser={this.props.setCurrentUser} onClick={this.handleCloseLogin}/>
         </Modal.Body>
         <Modal.Footer>
-{/*          <button variant="secondary" onClick={this.handleCloseLogin}>
-            Close
-          </button>*/}
           <p>Not signed up yet?</p>
           <button className="btn text-info" onClick={this.handleSwitchLS}>
             <u>Sign up</u>
