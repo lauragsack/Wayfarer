@@ -6,7 +6,6 @@ class Home extends Component {
 	    return (
 			<div>
 				<div>
-					<h1>Wayfarer</h1>
 					<Carousel>
 					<Carousel.Item>
 						<img
@@ -41,18 +40,18 @@ class Home extends Component {
 					<br/>
 					<h2 className="text-center">Wayfarer is...</h2>
 					<br/>
-					<div className="row justify-content-md-center">
+					<div className="row justify-content-center">
 						<div className="col-md">
-							<h3>Topic 1</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<h4>See the world</h4>
+							<p>Ready for your next adventure but not sure where to go or what to do when you get there? Enter Wayfarer. Explore cities and read posts to get ready for your best trip yet.</p>
 						</div>
 						<div className="col-md">
-							<h3>Topic 2</h3>
-							<p>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<h4>Share the world</h4>
+							<p>Know of an awesome hike? Eat the best meal of your life? Your Wayfarer community wants to know! Hit us with a post and keep the travel vibes vibing.</p>
 						</div>
 						<div className="col-md">
-							<h3>Topic 3</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<h4>Repeat</h4>
+							<p>After you tell us all about your latest trip, start planning your next great adventure right here on Wayfarer. We can't wait for you to start the journey with us.</p>
 					</div>
   	</div>
 				
