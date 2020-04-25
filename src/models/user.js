@@ -21,4 +21,12 @@ export default class UserModel {
         })
         return request
     }
+
+    static update(data) {
+      console.log(data);
+      let request = axios.put(`${REACT_APP_API_URL}/users`, data, {
+          withCredentials: true
+      });
+      return request;
+    }
 }

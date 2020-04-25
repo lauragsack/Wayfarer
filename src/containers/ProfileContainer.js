@@ -1,44 +1,53 @@
 import React, {Component} from 'react';
-import Profile from '../components/Profile';
-import ProfileModel from '../models/profile';
-
-
+import ProfileShow from '../components/ProfileShow';
+import ProfileUpdate from '../components/ProfileUpdate';
+import UserModel from '../models/user';
 
 class ProfileContainer extends Component {
 	state={
-		name: this.props.currentUser.name,
-		city: this.props.currentUser.city,
-		date: this.props.currentUser.joinDate,
-		posts: this.props.posts,
+		user: this.props.currentUser,
+		update: false,
 	}
 
-	updateProfile = (user) => {
-		const isUpdatedUser = p => {
-			return p._id === user._id;
+	updateProfile = (event) => {
+		event.preventDefault();
+		let data = {
+			name: event.target.name.value,
+			city: event.target.city.value,
 		};
-		ProfileModel.update(user)
+
+		UserModel.update(data)
 		.then((res) => {
-			let user =this.state.user;
-			user.find(isUpdatedUser).name = user.name;
-			user.find(isUpdatedUser).city = user.city;
-			this.setState({user: user})
+			this.setState({
+				user: res.data
+			})
+		});
+	}
+
+	toggleUpdate = () => {
+		this.setState({
+			update: !this.state.update,
 		});
 	}
 
 	render() {
-		console.log(this.props);
-		console.log(this.state);
-		return(
-			<div>
-				<Profile
-					name={this.state.name}
-					city={this.state.city}
-					date={this.state.date}
-					posts={this.state.posts}
+		if (this.state.update){
+			return(
+				<ProfileUpdate
+					user={this.state.user}
+					toggleUpdate={this.toggleUpdate}
 					updateProfile={this.updateProfile}
 					/>
-			</div>
-		)
+			);
+		}
+		else {
+			return(
+				<ProfileShow
+					user={this.state.user}
+					toggleUpdate={this.toggleUpdate}
+					/>
+			);
+		}
 	}
 }
 
