@@ -18,9 +18,11 @@ class ProfileContainer extends Component {
 
 		UserModel.update(data)
 		.then((res) => {
+			this.props.setCurrentUser(res.data)
 			this.setState({
-				user: res.data
-			})
+				user: res.data,
+				update: false,
+			});
 		});
 	}
 
