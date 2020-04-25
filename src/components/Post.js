@@ -10,7 +10,7 @@ const Post = (props) => {
         <p class="card-text">{props.post.content}</p>
       </div>
         <div className="card-footer text-muted">
-          <p class="card-text">Posted by {props.post.user}</p>
+          <p class="card-text">Posted by {props.post.user.name}</p>
         </div>
     </div>
   )

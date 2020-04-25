@@ -10,7 +10,10 @@ export default (props) => (
   <Switch>
     <Route exact path="/" component={ Home }/>
     <Route path="/profile">
-      <ProfileContainer currentUser={props.currentUser} />
+      <ProfileContainer
+        currentUser={props.currentUser}
+        setCurrentUser={props.setCurrentUser}
+      />
     </Route>
     <Route path="/posts" component={ PostsContainer }/>
     <Route path="/posts/:id" component={ PostShow }/>

@@ -38,7 +38,7 @@ class ProfileUpdate extends Component {
     }
   );
 
-  if (!this.state.city){
+  if (this.state.city.id === -1){
     cityOptions.unshift(
       <option key={-1}>Select a city...</option>
     )
@@ -72,7 +72,7 @@ class ProfileUpdate extends Component {
                 className="form-control form-control-lg custom-selectr"
                 id="city"
                 name="city"
-                value={this.state.city}
+                value={this.state.city.id}
                 >
                 {cityOptions}
               </select>
