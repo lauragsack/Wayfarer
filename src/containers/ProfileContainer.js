@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ProfileShow from '../components/ProfileShow';
 import ProfileUpdate from '../components/ProfileUpdate';
+import ProfilePosts from '../components/ProfilePosts';
 import UserModel from '../models/user';
 
 class ProfileContainer extends Component {
@@ -33,8 +34,9 @@ class ProfileContainer extends Component {
 	}
 
 	render() {
+		let form = null;
 		if (this.state.update){
-			return(
+			form = (
 				<ProfileUpdate
 					user={this.state.user}
 					toggleUpdate={this.toggleUpdate}
@@ -43,13 +45,19 @@ class ProfileContainer extends Component {
 			);
 		}
 		else {
-			return(
+			form = (
 				<ProfileShow
 					user={this.state.user}
 					toggleUpdate={this.toggleUpdate}
 					/>
 			);
 		}
+		return (
+			<div>
+				{form}
+				<ProfilePosts/>
+			</div>
+		)
 	}
 }
 

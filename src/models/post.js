@@ -18,6 +18,19 @@ export default class PostModel {
       return request
   }
 
+  static show = (post) => {
+    let request = axios.get(`${REACT_APP_API_URL}/${post._id}`, post);
+    return request
+}
+
+  static user = () => {
+    let request = axios.get(`${REACT_APP_API_URL}/user`, {
+      withCredentials: true,
+    });
+    return request
+}
+
+
   static all = () => {
   	let request = axios.get(`${REACT_APP_API_URL}`)
   	return request
