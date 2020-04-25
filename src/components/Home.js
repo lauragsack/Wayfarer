@@ -36,6 +36,7 @@ class Home extends Component {
 						/>
 					</Carousel.Item>
 					</Carousel>
+					
 				</div>
 					<br/>
 					<h2 className="text-center">Wayfarer is...</h2>
@@ -53,8 +54,7 @@ class Home extends Component {
 							<h4>Repeat</h4>
 							<p>After you tell us all about your latest trip, start planning your next great adventure right here on Wayfarer. We can't wait for you to start the journey with us.</p>
 					</div>
-  	</div>
-				
+  				</div>
 			</div>
 	    );
 	}
