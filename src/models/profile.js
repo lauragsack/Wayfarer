@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-// changed from v1/profile to v1/user since we don't have a profile model
 const REACT_APP_API_URL = "http://localhost:3001/api/v1/user"
 
 export default class ProfileModel {
@@ -15,6 +14,4 @@ export default class ProfileModel {
   	let request = axios.get(`${REACT_APP_API_URL}`)
   	return request
   }
-
 }
-

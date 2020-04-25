@@ -65,7 +65,7 @@ class Navbar extends Component {
       {/*Signup Modal*/}
       <Modal show={signup} onHide={this.handleCloseSignUp}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Signup</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Signup history={this.props.history} setCurrentUser={this.props.setCurrentUser} onClick={this.handleCloseSignUp}/>
@@ -85,7 +85,7 @@ class Navbar extends Component {
       {/*Login Modal*/}
       <Modal show={login} onHide={this.handleCloseLogin}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Login history={this.props.history} setCurrentUser={this.props.setCurrentUser} onClick={this.handleCloseLogin}/>
