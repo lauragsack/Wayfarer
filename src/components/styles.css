@@ -1,1 +1,9 @@
-.custom-dialog {width:80% !important; top:20%;}
+header {
+  background-image: url('https://images.unsplash.com/photo-1534050359320-02900022671e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 600px;
+  margin-top: 10px;
+  margin-bottom: 48px;
+}
