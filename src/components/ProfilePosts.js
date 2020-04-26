@@ -26,7 +26,7 @@ class ProfilePosts extends Component {
             <Post
                 key={post._id}
                 post={post}
-            /> 
+            />
         );
     });
     return (
@@ -39,5 +39,3 @@ class ProfilePosts extends Component {
 }
 
 export default ProfilePosts;
-
-
