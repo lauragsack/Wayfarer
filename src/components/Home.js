@@ -42,7 +42,7 @@ class Home extends Component {
 
 		return (
 			<div>
-				<div id="cityCarousel" className="carousel slide" data-ride="carousel">
+				<div id="cityCarousel" className="carousel slide mb-5" data-ride="carousel">
 					<ol className="carousel-indicators">
 						{carouselIndicators}
 					</ol>

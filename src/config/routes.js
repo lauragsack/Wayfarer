@@ -5,7 +5,7 @@ import Home from '../components/Home'
 import PostShow from '../components/PostShow'
 import ProfileContainer from '../containers/ProfileContainer'
 import PostsContainer from '../containers/PostsContainer'
-import City from '../components/City'
+import CitiesContainer from '../containers/CitiesContainer'
 
 export default (props) => (
   <Switch>
@@ -18,6 +18,6 @@ export default (props) => (
     </Route>
     <Route exact path="/posts" component={ PostsContainer }/>
     <Route path="/posts/:id" component={ PostShow }/>
-    <Route path="/city/1" component={City}/>
+    <Route exact path="/cities" component={CitiesContainer}/>
   </Switch>
 );
