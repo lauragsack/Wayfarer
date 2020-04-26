@@ -86,7 +86,7 @@ class CreatePostForm extends Component {
             </div>
 
                 <button type="submit" id="addPost" className="btn">Add Post</button>
-            </form>
+        </form>
         );
     }
 }
