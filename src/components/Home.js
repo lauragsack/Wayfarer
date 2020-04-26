@@ -5,6 +5,10 @@ class Home extends Component {
 
 	citySlides = [
 		{
+			image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
+			name: "London",
+		},
+		{
 			image: "https://images.unsplash.com/photo-1503152889424-9c280f38cb1c",
 			name: "Gibraltar",
 		},
@@ -27,7 +31,7 @@ class Home extends Component {
 					key={i}
 					className={i===0 ? 'active' : ''}
 					data-target="#cityCarousel"
-					data-slide-to={i} 
+					data-slide-to={i}
 				/>
 			)
 		}
@@ -58,7 +62,7 @@ class Home extends Component {
 						<span className="sr-only">Next</span>
 					</a>
 				</div>
-
+				<h2 className="text-center my-4">Wayfarer is...</h2>
 				<div className="row justify-content-center">
 					<div className="col-md">
 						<h4>See the world</h4>
@@ -79,40 +83,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-// alt="London"
-//
-// src="https://images.unsplash.com/photo-1503152889424-9c280f38cb1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-// alt="Gibraltar"
-
-// <Carousel>
-// <Carousel.Item>
-// 	<img
-// 	className="d-block w-100"
-// 	src="https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-// 	alt="San Francisco"
-// 	/>
-// </Carousel.Item>
-// <Carousel.Item>
-	// <img
-	// className="d-block w-100"
-	// src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-	// alt="London"
-	// />
-// </Carousel.Item>
-// <Carousel.Item>
-// 	<img
-// 	className="d-block w-100"
-// 	src="https://images.unsplash.com/photo-1503152889424-9c280f38cb1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-// 	alt="Gibraltar"
-// 	/>
-// </Carousel.Item>
-// <Carousel.Item>
-// 	<img
-// 	className="d-block w-100"
-// 	src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-// 	alt="Sydney"
-// 	/>
-// </Carousel.Item>
-// </Carousel>
