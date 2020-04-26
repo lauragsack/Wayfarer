@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
+import Posts from './Posts';
 
 
 class City extends Component{
@@ -9,6 +10,7 @@ class City extends Component{
       <h1>San Francisco</h1>
       <header></header>
 
+      <Posts/>
 
       </div>
     )
