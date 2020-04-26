@@ -18,6 +18,10 @@ export default (props) => (
     </Route>
     <Route exact path="/posts" component={ PostsContainer }/>
     <Route path="/posts/:id" component={ PostShow }/>
+<<<<<<< Updated upstream
     <Route exact path="/cities" component={CitiesContainer}/>
+=======
+    <Route path="/cities/:id?" component={ CitiesContainer }/>
+>>>>>>> Stashed changes
   </Switch>
 );
