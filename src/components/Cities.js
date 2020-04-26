@@ -13,7 +13,6 @@ class Cities extends Component {
 
     fetchData = () => {
         CityModel.all().then((res) => {
-            console.log(res.data)
             this.setState({
                 cities: res.data
             });

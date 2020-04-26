@@ -10,8 +10,8 @@ class City extends Component{
     return (
       <div>
       <h1>{this.props.city.name}</h1>
-      <img src={this.props.city.image} alt = {this.props.city.name}/>
-      <h2>{this.props.city.name}</h2>
+      <img className="mb-5" src={this.props.city.image}/>
+
 
 
       </div>

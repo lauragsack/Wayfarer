@@ -37,7 +37,7 @@ class Navbar extends Component {
             <ul className="navbar-nav ml-auto">
 
             <li className= "nav-item">
-                <NavLink className="nav-link" to="/city/1">Cities</NavLink>
+                <NavLink className="nav-link" to="/cities">Cities</NavLink>
                 </li>
 
               { this.props.currentUser ?
