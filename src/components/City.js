@@ -2,6 +2,7 @@
 //importing
 import React, { Component } from 'react';
 import './styles.css';
+import Posts from './Posts';
 
 //Trying to render data from seed file before rendering
 
@@ -14,6 +15,7 @@ class City extends Component{
       <h2>{this.props.city.name}</h2>
       <header></header>
 
+      <Posts/>
 
       </div>
     )
