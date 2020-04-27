@@ -5,6 +5,7 @@ import Home from '../components/Home'
 import ProfileContainer from '../containers/ProfileContainer'
 import CitiesContainer from '../containers/CitiesContainer'
 import CityShow from '../components/CityShow'
+import PostsContainer from '../containers/PostsContainer'
 
  function Routes(props){
    return(
@@ -16,6 +17,7 @@ import CityShow from '../components/CityShow'
            setCurrentUser={props.setCurrentUser}
            />
        </Route>
+       <Route exact path="/posts" component={ PostsContainer }/>
        <Route path="/cities/:id?" render={routeProps =>
            <CitiesContainer
              {...routeProps}
