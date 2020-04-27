@@ -25,18 +25,18 @@ class CreatePostForm extends Component {
         })
     }
 
-    componentDidMount(){
-        CityModel.all()
-        .then(data => {
-          this.setState({
-            cityList: data.data,
-          });
-        })
-        .catch(err => {
-          console.log(err);
-        });
-      }
-    
+    // componentDidMount(){
+    //     CityModel.all()
+    //     .then(data => {
+    //       this.setState({
+    //         cityList: data.data,
+    //       });
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //     });
+    //   }
+
     render() {
         let cityOptions = this.state.cityList.map( (city, index) => {
           return(
@@ -46,7 +46,7 @@ class CreatePostForm extends Component {
           );
         }
       );
-    
+
       if (this.state.city.id === -1){
         cityOptions.unshift(
           <option key={-1}></option>
@@ -62,7 +62,7 @@ class CreatePostForm extends Component {
                     name="city"
                     value={this.state.city.id}
                 >
-                {Cityoptions}
+                {cityOptions}
                 </select>
             </div>
             <div className="form-group">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CityPost from './CityPost';
-import PostModel from '../models/post'
-import CreateCityPost from './CreateCityPost'
+import PostModel from '../models/post';
+import PostForm from './post/PostForm';
 
 import Modal from "react-bootstrap/Modal";
 
@@ -52,6 +52,15 @@ componentDidUpdate(prevProps, prevState) {
           />
       )
 
+      let form = <div/>
+      if (this.state.show){
+        form = <PostForm
+          cityList={this.props.cityList}
+          postForm="create"
+          createPost={this.createPost.bind(this)}
+          />
+      }
+
       return(
         <>
         <div className="shadow">
@@ -74,16 +83,8 @@ componentDidUpdate(prevProps, prevState) {
             </div>
           </div>
         </div>
+        {form}
 
-      <Modal show={this.state.show} onHide={this.handleCloseAddPost}>
-          <CreateCityPost
-            city={this.state.city}
-            createPost={this.createPost.bind(this)}
-            handleCloseAddPost={this.handleCloseAddPost}
-            cityList={this.props.cityList}
-             />
-            }
-      </Modal>
       </>
       );
     }
@@ -103,3 +104,14 @@ componentDidUpdate(prevProps, prevState) {
 
 
 export default CityShow;
+
+
+// <Modal show={this.state.show} onHide={this.handleCloseAddPost}>
+//     <CreateCityPost
+//       city={this.state.city}
+//       createPost={this.createPost.bind(this)}
+//       handleCloseAddPost={this.handleCloseAddPost}
+//       cityList={this.props.cityList}
+//        />
+//       }
+// </Modal>
