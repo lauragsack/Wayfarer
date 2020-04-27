@@ -1,6 +1,5 @@
-
 import React, {Component} from 'react';
-import {BrowserRouter as Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 // import Modal from 'react-responsive-modal';
 import Modal from "react-bootstrap/Modal";
 // import EditPostForm from '../components/EditPostForm';
@@ -20,17 +19,12 @@ class CityPost extends Component {
   handleEdit = () => {this.setState({edit: true})}
 
   async deletePost(post) {
-    console.log("deleting")
-    console.log(this.props.post._id)
     let res = await PostModel.delete(this.props.post._id);
-    console.log(res)
     if(!res.status === 200){
       console.log('error deleting post');
     }
     this.handleDeleteClose();
-    console.log("closing modal")
     this.props.fetchPosts();
-    console.log("fetching posts")
   }
 
   render () {
@@ -53,15 +47,15 @@ class CityPost extends Component {
         <Modal id="editModal" show={edit} onHide={this.handleEditClose}>
           <Modal.Body>
             <p>testing</p>
-            {/*<EditPostForm onClick={this.handle}/>*/}
+            {/* <EditPostForm post={this.props.post}/> */}
           </Modal.Body>
           <Modal.Footer>
-            <button >Submit</button>
+              {/* need to add update method to below "Submit" button*/}
+            <button>Submit</button>
           </Modal.Footer>
         </Modal>
         <Modal id="delModal" show={del} onHide={this.handleDeleteClose}>
           <Modal.Body>
-            <p>testing</p>
             <p>{`Are you sure you want to delete "${this.props.post.title}"?`}</p>
           </Modal.Body>
           <Modal.Footer>
