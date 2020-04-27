@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Open+Sans&display=swap');
+
+// font-family: 'Crimson Text', serif;
+// font-family: 'Open Sans', sans-serif;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Open Sans", "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$theme-colors: (
+  "dark": #142446
+);
+
+@import '~bootstrap/scss/bootstrap.scss';

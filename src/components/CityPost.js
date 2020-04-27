@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import Modal from 'react-responsive-modal';
 // import EditPostForm from '../components/EditPostForm';
@@ -36,16 +35,25 @@ class CityPost extends Component {
     return (
       <div>
         <div className="card">
-          <h5 className="card-header">
-            <p>{this.props.post.title}</p>
-          </h5>
+          <div className="card-header">
+            <h3>{this.props.post.title}
+              <div className="btn-group float-right">
+                <button
+                  className="btn btn-dark fas fa-pen"
+                  onClick={this.handleEdit}
+                  />
+                <button
+                  className="btn btn-dark fas fa-trash-alt"
+                  onClick={this.handleDelete}
+                  />
+              </div>
+            </h3>
+          </div>
           <div className="card-body">
             <p className="card-text">{this.props.post.content}</p>
           </div>
           <div className="card-footer text-muted">
             <p className="card-text">Posted by {this.props.post.user.name} on {postDate}</p>
-            <button className="btn btn-info float right" onClick={this.handleEdit}>Edit</button>
-            <button className="btn btn-info float right" onClick={this.handleDelete}>Delete</button>
           </div>
         </div>
         <Modal id="editModal" show={edit} onHide={this.handleEditClose}>
