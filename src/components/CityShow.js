@@ -21,7 +21,7 @@ componentDidUpdate(prevProps, prevState) {
   }
 
   async fetchPosts(){
-    let response = await PostModel.city(this.props.cityShow._id);
+    let response = await PostModel.city(this.state.city._id);
     this.setState({
       posts: response.data,
     });
@@ -34,7 +34,7 @@ componentDidUpdate(prevProps, prevState) {
         <CityPost
           key={post._id}
           post={post}
-          fetchPosts={this.fetchPosts}
+          fetchPosts={this.fetchPosts.bind(this)}
           />
       )
 
