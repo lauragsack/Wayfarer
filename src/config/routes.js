@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 // import components
 import Home from '../components/Home'
+import PostShow from '../components/PostShow'
 import ProfileContainer from '../containers/ProfileContainer'
 import CitiesContainer from '../containers/CitiesContainer'
 
@@ -22,6 +23,7 @@ import CitiesContainer from '../containers/CitiesContainer'
              />
          }
          />
+       <Route path="/posts/:id" component={ PostShow }/>
      </Switch>
    );
 }
