@@ -18,13 +18,14 @@ class CityPost extends Component {
   handleEditClose = () => {this.setState({edit: false})}
   handleEdit = () => {this.setState({edit: true})}
 
-  async editPost(post){
-      let res = await PostModel.edit(this.props.post._id);
-      if(!res.status===200){
-          console.log('Cannot edit post at this time.');
-        }
-        this.handleEditClose();
-        this.props.fetchPosts();
+  async editPost(event){
+    event.preventDefault();
+    console.log('test edit');
+
+
+    // await PostModel.update(this.props.posts);
+    //     this.handleEditClose();
+    //     this.props.fetchPosts();
       }
 
   async deletePost(post) {
@@ -56,11 +57,11 @@ class CityPost extends Component {
           <Modal id="editModal" show={edit} onHide={this.handleEditClose}>
           <Modal.Body>
           <p>Edit a post.</p>
-          <EditPostForm onClick={this.handleEdit} post={this.props.post}/>
+          <EditPostForm post={this.props.post} cityList={this.props.cityList}/>
           </Modal.Body>
           <Modal.Footer>
           <button className="btn text-info" onClick={this.handleEditClose}>Cancel</button>
-          <button className="btn text-danger">Submit</button>
+          <button className="btn text-danger" onClick={this.editPost}>Submit</button>
           </Modal.Footer>
           </Modal>
           <Modal id="delModal" show={del} onHide={this.handleDeleteClose}>
