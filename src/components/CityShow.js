@@ -33,17 +33,9 @@ componentDidUpdate(prevProps, prevState) {
   }
 
   async createPost(post){
-    let newPost = {
-        body: post,
-    };
-    console.log(newPost)
-
-    let res = await PostModel.create(newPost)
-        console.log(res.data)
-        let posts = this.state.posts;
-        posts.push(res.data);
-        this.setState({ posts: posts });
-    };
+    await PostModel.create(post);
+    this.fetchPosts();
+  }
 
   handleCloseAddPost = () => this.setState({show: false});
   handleAddPost = () => this.setState({show: true});
@@ -83,9 +75,9 @@ componentDidUpdate(prevProps, prevState) {
         </div>
 
       <Modal show={this.state.show} onHide={this.handleCloseAddPost}>
-          <CreateCityPost 
-            city={this.state.city} 
-            createPost={this.createPost}
+          <CreateCityPost
+            city={this.state.city}
+            createPost={this.createPost.bind(this)}
             handleCloseAddPost={this.handleCloseAddPost}
             cityList={this.props.cityList}
              />

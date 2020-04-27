@@ -4,7 +4,9 @@ const REACT_APP_API_URL = "http://localhost:3001/api/v1/posts"
 
 export default class PostModel {
   static create = (post) => {
-  	let request = axios.post(REACT_APP_API_URL, post);
+  	let request = axios.post(REACT_APP_API_URL, post, {
+      withCredentials: true
+    });
     return request;
   }
 
