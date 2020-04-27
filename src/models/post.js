@@ -8,8 +8,8 @@ export default class PostModel {
     return request;
   }
 
-  static delete = (post) => {
-      let request = axios.delete(`${REACT_APP_API_URL}/${post._id}`);
+  static delete = (postId) => {
+      let request = axios.delete(`${REACT_APP_API_URL}/${postId}`);
       return request;
   }
 

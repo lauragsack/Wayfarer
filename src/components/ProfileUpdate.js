@@ -68,11 +68,11 @@ class ProfileUpdate extends Component {
             <div className="form-group">
               <label htmlFor="city">Current city</label>
               <select
-                onChange={this.handleChange}
                 className="form-control form-control-lg custom-selectr"
                 id="city"
                 name="city"
                 value={this.state.city.id}
+                onChange={this.handleChange}
                 >
                 {cityOptions}
               </select>

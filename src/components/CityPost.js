@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 // import Modal from 'react-responsive-modal';
-import Modal from 'react-bootstrap/Modal';
-import EditPostForm from '../components/EditPostForm';
+import Modal from "react-bootstrap/Modal";
+// import EditPostForm from '../components/EditPostForm';
 import PostModel from '../models/post'
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,7 +28,7 @@ class CityPost extends Component {
   // }
 
   async deletePost(post) {
-    let res = await PostModel.delete(this.state.postId);
+    let res = await PostModel.delete(this.props.post._id);
     if(!res.status === 200){
       console.log('error deleting post');
     }
@@ -55,21 +55,29 @@ class CityPost extends Component {
         </div>
         <Modal id="editModal" show={edit} onHide={this.handleEditClose}>
           <Modal.Body>
+<<<<<<< HEAD
             <p>Create a new post.</p>
             <EditPostForm onClick={this.handleEdit} post={this.props.post}/>
           </Modal.Body>
           <Modal.Footer>
           <button className="btn text-info" onClick={this.handleEditClose}>Cancel</button>
           <button className="btn text-danger">Submit</button>
+=======
+            <p>testing</p>
+            {/* <EditPostForm post={this.props.post}/> */}
+          </Modal.Body>
+          <Modal.Footer>
+              {/* need to add update method to below "Submit" button*/}
+            <button>Submit</button>
+>>>>>>> submaster
           </Modal.Footer>
         </Modal>
         <Modal id="delModal" show={del} onHide={this.handleDeleteClose}>
           <Modal.Body>
-            <p>testing</p>
-            <p>{`Are you sure you want to delete ${this.props.post.title}`}</p>
+            <p>{`Are you sure you want to delete "${this.props.post.title}"?`}</p>
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn text-danger" onCLick={this.deletePost}>del Post</button>
+            <button className="btn text-danger" onClick={this.deletePost.bind(this)}>Delete Post</button>
             <button className="btn text-info" onClick={this.handleDeleteClose}>Cancel</button>
           </Modal.Footer>
         </Modal>
