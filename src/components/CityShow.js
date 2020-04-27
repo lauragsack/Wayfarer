@@ -4,6 +4,7 @@ import PostModel from '../models/post'
 import CreateCityPost from './CreateCityPost'
 
 import Modal from "react-bootstrap/Modal";
+import '../styles.css'
 
 
 
@@ -55,16 +56,18 @@ componentDidUpdate(prevProps, prevState) {
         <>
         <div className="shadow">
           <div className="row">
-            <div className="col m-3">
-              <h2>{this.props.cityShow.name}</h2>
-              <button className="btn btn-outline-primary align-self-end" onClick={this.handleAddPost}>Add a Post</button>
-            </div>
-            <div className="col m-3">
-              <img
-                className="rounded-lg"
-                src={this.props.cityShow.images.header.src}
-                alt={this.props.cityShow.name}
-                />
+            <div className="col-md-12 mb-5">
+              <div>
+                <img
+                  className="w-100 img-responsive"
+                  src={this.props.cityShow.images.header.src}
+                  alt={this.props.cityShow.name}
+                  />
+              </div>
+              <div className="carousel-caption shadow">
+                <h2 className="font-weight-bold sansserif">{this.props.cityShow.name}</h2>
+                <button className="btn btn-outline-light" onClick={this.handleAddPost}>Add a Post</button>
+              </div>
             </div>
           </div>
           <div className="row">
@@ -90,8 +93,8 @@ componentDidUpdate(prevProps, prevState) {
       return(
         <div className="shadow">
           <div className="row">
-            <div className="col m-3">
-              <h2>Choose a City</h2>
+            <div className="col-md-12 pt-3 pb-2">
+              <h4 className="choosecity text-center">Choose a City</h4>
             </div>
           </div>
         </div>

@@ -1,0 +1,23 @@
+.sansserif {
+  font-family: Impact, fantasy, fantasy;
+}
+
+.citytitle {
+  font-family: Impact, fantasy, fantasy;
+  color: rgba(0, 0, 0, 0.3)
+}
+
+.choosecity {
+  font-family: Impact, fantasy, fantasy;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.title-text {
+	position: absolute;
+  left:3%;
+  padding:25px 0;
+  font-family: Impact, fantasy, fantasy;
+  font-color: gray;
+  font-size: 25px
+}

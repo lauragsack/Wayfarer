@@ -3,7 +3,7 @@ import {BrowserRouter as Link} from 'react-router-dom'
 
 const ProfilePost = (props) => {
   return (
-    <div className="card">
+    <div className="card mt-5 col-md-8 offset-2">
       <h5 className="card-header">
         <p><Link to={`/posts/${props.post._id}`}>{props.post.title}</Link></p>
       </h5>

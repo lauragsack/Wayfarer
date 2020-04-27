@@ -10,11 +10,12 @@ class ProfileShow extends Component {
     return(
       <div className="container mt-4">
         <div className="row">
-          <div className="col-md-4 offset-md-4">
+          <div className="col-md-8 offset-2">
             <h4 className="mb-3">
               Profile <i className='btn fas fa-pen float-right'
               onClick={this.props.toggleUpdate}/>
             </h4>
+            <hr/>
             <small className="float-right">Joined {this.state.joinDate}</small>
           <form>
             <div className="form-group">

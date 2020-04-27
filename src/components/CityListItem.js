@@ -8,15 +8,15 @@ function CityListItem(props){
         to={`/cities/${props.city._id}`}
         className="row"
         >
-        <div className="col-4">
-          <img
-            className="rounded"
-            src={props.city.images.icon.src}
-            alt={props.city.name} />
-        </div>
-        <div className="col-8">
-          <h4>{props.city.name}</h4>
-        </div>
+          <div className="col-4">
+            <img
+              className="rounded"
+              src={props.city.images.icon.src}
+              alt={props.city.name} />
+          </div>
+          <div class="col-8 title-text text-secondary">
+            {props.city.name}
+          </div>
       </Link>
     </li>
   );

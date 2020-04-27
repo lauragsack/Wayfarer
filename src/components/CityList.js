@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import CityListItem from './CityListItem';
+import '../styles.css'
 
 class CityList extends Component{
 
@@ -17,7 +18,7 @@ class CityList extends Component{
 
 	  return (
 			<div className="shadow">
-				<h2 className="p-3">Cities</h2>
+				<h4 className="citytitle text-center pt-3 pb-2">C I T I E S</h4>
 				<ul className="list-group">
 					{listItems}
 				</ul>
