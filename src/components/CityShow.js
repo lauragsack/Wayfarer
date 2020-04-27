@@ -32,17 +32,17 @@ componentDidUpdate(prevProps, prevState) {
     });
   }
 
-  createPost = (post) => {
+  async createPost(post){
     let newPost = {
         body: post,
     };
-    
-    PostModel.create(newPost)
-    .then((res) => {
+    console.log(newPost)
+
+    let res = await PostModel.create(newPost)
+        console.log(res.data)
         let posts = this.state.posts;
         posts.push(res.data);
         this.setState({ posts: posts });
-    });
     };
 
   handleCloseAddPost = () => this.setState({show: false});
@@ -87,7 +87,9 @@ componentDidUpdate(prevProps, prevState) {
             city={this.state.city} 
             createPost={this.createPost}
             handleCloseAddPost={this.handleCloseAddPost}
+            cityList={this.props.cityList}
              />
+            }
       </Modal>
       </>
       );

@@ -63,7 +63,7 @@ class CityPost extends Component {
             <p>{`Are you sure you want to delete ${this.props.post.title}`}</p>
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn text-danger" onCLick={this.deletePost}>del Post</button>
+            <button className="btn text-danger" onClick={this.deletePost}>del Post</button>
             <button className="btn text-info" onClick={this.handleDeleteClose}>Cancel</button>
           </Modal.Footer>
         </Modal>

@@ -51,7 +51,9 @@ class CitiesContainer extends Component {
             />
         </div>
         <div className="col-lg-8 bg-yellow">
-          <CityShow cityShow={cityShow}/>
+          <CityShow 
+          cityShow={cityShow}
+          cityList={this.state.cityList} />
         </div>
       </div>
     );

@@ -8,42 +8,30 @@ class CreateCityPost extends Component {
 	state = {
         title: '',
         content: '',
-        city: this.props.city,
-        cityList: []
+        city: this.props.city._id,
     };
 
     onInputChange = (event) => {
+        console.log(event.target.name,event.target.value)
         this.setState({
             [event.target.name]: event.target.value,
         });
     }
 
     onFormSubmit = (event) => {
+        console.log(this)
         event.preventDefault();
-        let post = this.state.post;
+        let post = this.state;
         this.props.createPost(post);
         this.setState({
             title: '',
             content: '',
             city: '',
-            cityList: [],
         })
     }
-
-    componentDidMount(){
-        CityModel.all()
-        .then(data => {
-          this.setState({
-            cityList: data.data,
-          });
-        })
-        .catch(err => {
-          console.log(err);
-        });
-      }
     
     render() {
-      let cityOptions = this.state.cityList.map( (city, index) => {
+      let cityOptions = this.props.cityList.map( (city, index) => {
         return(
           <option
             key={index}
@@ -59,7 +47,7 @@ class CreateCityPost extends Component {
                 <select
                     onChange={this.onInputChange}
                     name="city"
-                    value={this.state.city.id}
+                    value={this.state.city._id}
                 >
                 {cityOptions}
                 </select>
