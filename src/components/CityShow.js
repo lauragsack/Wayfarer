@@ -9,13 +9,13 @@ class CityShow extends Component {
     posts: [],
   }
 
-componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if(this.state.city !== this.props.cityShow){
       this.setState({
         city: this.props.cityShow,
       })
     }
-    if(this.state.city != prevState.city){
+    if(this.state.city !== prevState.city){
       this.fetchPosts();
     }
   }
@@ -36,14 +36,13 @@ componentDidUpdate(prevProps, prevState) {
 
   render(){
     if(this.props.cityShow){
-
       let posts = this.state.posts.map(post =>
         <CityPost
           key={post._id}
           post={post}
           fetchPosts={this.fetchPosts}
           />
-      )
+      );
 
       return(
         <div className="shadow">
@@ -76,9 +75,9 @@ componentDidUpdate(prevProps, prevState) {
             </div>
           </div>
         </div>
-      )
+      );
     }
-}
+  }
 }
 
 

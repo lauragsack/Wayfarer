@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-import {BrowserRouter as Link} from 'react-router-dom';
 import Modal from 'react-responsive-modal';
 // import EditPostForm from '../components/EditPostForm';
 import PostModel from '../models/post'
@@ -31,17 +30,20 @@ class CityPost extends Component {
 
   render () {
     const {edit, del} = this.state;
+
+    let postDate = Intl.DateTimeFormat('en-US').format(new Date(this.props.post.createdAt));
+
     return (
       <div>
         <div className="card">
           <h5 className="card-header">
-            <p><Link to={`/posts/${this.props.post._id}`}>{this.props.post.title}</Link></p>
+            <p>{this.props.post.title}</p>
           </h5>
           <div className="card-body">
             <p className="card-text">{this.props.post.content}</p>
           </div>
           <div className="card-footer text-muted">
-            <p className="card-text">Posted by {this.props.post.user.name}</p>
+            <p className="card-text">Posted by {this.props.post.user.name} on {postDate}</p>
             <button className="btn btn-info float right" onClick={this.handleEdit}>Edit</button>
             <button className="btn btn-info float right" onClick={this.handleDelete}>Delete</button>
           </div>
