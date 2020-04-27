@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 class CityListItem extends Component {
 
-
-
   render(){
     return(
       <li className="list-group-item m-3 shadow">
@@ -13,7 +11,10 @@ class CityListItem extends Component {
            className="row"
            >
           <div className="col-4">
-            <img src={this.props.city.images.icon.src}></img>
+            <img
+              className="rounded"
+              src={this.props.city.images.icon.src}
+              alt={this.props.city.name} />
           </div>
           <div className="col-8">
             <h4>{this.props.city.name}</h4>

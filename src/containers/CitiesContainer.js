@@ -1,42 +1,57 @@
 import React, { Component } from 'react';
-import CityModel from '../models/city';
 import CityList from '../components/CityList';
 import CityShow from '../components/CityShow';
 
 class CitiesContainer extends Component {
   state={
     cityList: [],
-    cityShow: '',
+    cityId: null,
 	}
 
   componentDidMount() {
-    if(!this.state.cityList.length){
-      this.fetchCityList();
-    }
-
     this.setState({
-      cityShow: this.props.match.params.id
+      cityId: this.props.match.params.id,
     })
-
   }
 
-  async fetchCityList(){
-    let response = await CityModel.all();
+  componentDidUpdate(prevProps, prevState) {
+    let newState = {};
+
+    if(this.state.cityList !== this.props.cityList){
+      newState.cityList = this.props.cityList;
+    }
+
+    if(this.state.cityId !== this.props.match.params.id){
+      newState.cityId = this.props.match.params.id;
+    }
+
+    if(Object.values(newState).length){
+      this.setState(newState);
+    }
+  }
+
+  setCity(cityId){
     this.setState({
-      cityList: response.data
+      cityId
     });
   }
 
   render() {
+    let cityShow = this.state.cityList.find( city =>
+      city._id === this.state.cityId
+    )
+
     return (
       <div className="cityContainer row">
         <div className="col-lg-4">
           <CityList
             cityList={this.state.cityList}
+            cityId={this.cityId}
+            setCity={this.setCity}
             />
         </div>
         <div className="col-lg-8">
-          <CityShow />
+          <CityShow cityShow={cityShow}/>
         </div>
       </div>
     );
