@@ -39,8 +39,8 @@ class CityPost extends Component {
                     </div>
                         <div className="card-footer text-muted">
                         <p className="card-text">Posted by {this.props.post.user.name}</p>
-                        <button className="btn btn-info float right" onClick={this.handleEdit}>Edit</button>
-                        <button className="btn btn-info float right" onClick={this.handleDelete}>Delete</button>
+                        <button className="btn btn-info float-right ml-2" onClick={this.handleDelete}>Delete</button>
+                        <button className="btn btn-info float-right" onClick={this.handleEdit}>Edit</button>
                     </div>
                 </div>
                 <Modal id="editModal" show={edit} onHide={this.handleEditClose}>
@@ -55,7 +55,7 @@ class CityPost extends Component {
                 <Modal id="delModal" show={deleted} onHide={this.handleDeleteClose}>
                     <Modal.Body>
                         <p>testing</p>
-                        <p>{`Are you sure you want to delete ${this.state.post.title}`}</p>
+                        <p>{`Are you sure you want to delete ${this.props.post.title}`}</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <button className="btn text-danger" onCLick={this.deletePost}>Delete Post</button>

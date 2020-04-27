@@ -3,6 +3,7 @@ import CityPost from './CityPost';
 import PostModel from '../models/post'
 
 
+
 class CityShow extends Component {
   state = {
     city: null,
@@ -43,6 +44,7 @@ componentDidUpdate(prevProps, prevState) {
           <div className="row">
             <div className="col m-3">
               <h2>{this.props.cityShow.name}</h2>
+              <button className="btn btn-outline-primary align-self-end">Add a Post</button>
             </div>
             <div className="col m-3">
               <img
