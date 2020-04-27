@@ -19,7 +19,6 @@ export default (props) => (
     </Route>
     <Route exact path="/posts" component={ PostsContainer }/>
     <Route path="/posts/:id" component={ PostShow }/>
-    <Route exact path="/cities" component={CitiesContainer}/>
-    <Route path="/cities/:id" component={ CityShow }/>
+    <Route path="/cities/:id?" component={ CitiesContainer }/>
   </Switch>
 );

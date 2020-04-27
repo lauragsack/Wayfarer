@@ -1,32 +1,27 @@
 import React, { Component } from 'react';
-import CityModel from '../models/city';
+
 import CityList from './CityList';
-// import Cityview from './Cityview';
 import CityShow from './CityShow';
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import './styles.css'
 
 class Cities extends Component {
-    state = {
-        cities: [],
-        show: false
-    }
+  state = {
+    cities: [],
+    show: false
+  }
 
-    display = () => this.setState({show: true})
+  display = () => this.setState({show: true})
 
-    componentDidMount() {
-        this.fetchData();
-    };
+  componentDidMount() {
+    this.fetchCities();
+  };
 
-    fetchData = () => {
-        CityModel.all().then((res) => {
-            this.setState({
-                cities: res.data
-            });
-        });
-    }
+  // fetchCities = () => {
+  //   CityModel.all().then((res) => {
+  //     this.setState({
+  //       cities: res.data
+  //     });
+  //   });
+  // }
 
     render() {
         let cities = this.state.cities.map((city) => {
@@ -64,17 +59,16 @@ class Cities extends Component {
 
 
     return (
-        <div>
+      <div>
         <div className="sidebar">
-        <List disablePadding dense>
+          <List disablePadding dense>
             {cities}
-        </List>
+          </List>
         </div>
-            {view}
-        </div>
+        {view}
+      </div>
     );
-}
-
+  }
 }
 
 export default Cities;

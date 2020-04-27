@@ -1,41 +1,27 @@
 
-// import React, { Component } from 'react';
-
-// class City extends Component{
-//   render(){
-//     return (
-//       <div>
-//       <h1>{this.props.city.name}</h1>
-//       <img src={this.props.city.image}/>
-//       </div>
-//     )
-//   }
-// }
-// export default City;
-
-
 import React, { Component } from 'react';
-// import CityShow from './CityShow'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-
+import CityListItem from './CityListItem';
 
 class CityList extends Component{
 
 	state={
-	city : this.props.city,
-	// cityId: this.props.key
+		city : this.props.city,
 	}
 
-  	render(){
-	    return (
+	render(){
+		let listItems = this.props.cityList.map(city => {
+			return  <CityListItem key={city._id} city={city} />
+		})
 
-     <ListItem button onClick={this.props.display}>
-     	<ListItemText>
-     	{this.props.city.name}
-     	</ListItemText>
-     </ListItem>
-	    )
-  	}
+	  return (
+			<div className="shadow">
+				<h2 className="p-3">Cities</h2>
+				<ul className="list-group">
+					{listItems}
+				</ul>
+			</div>
+	  )
+	}
 }
+
 export default CityList;

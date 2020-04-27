@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import CityModel from '../models/city';
 
 
 class CityShow extends Component {
@@ -23,15 +22,12 @@ class CityShow extends Component {
   //     });
   //   });
   // }
-  
+
   render() {
     return (
-    <div className="row">
-      <div className="col-md-6 offset-md-3">
-      <h1>{this.props.city.name}</h1>
-      <img className="mb-5" src={this.props.city.image}/>
-    </div>
-  </div>
+      <div className="shadow">
+        <h1>City</h1>
+      </div>
     )
   }
 }
