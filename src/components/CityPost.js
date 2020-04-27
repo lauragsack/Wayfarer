@@ -1,7 +1,8 @@
 
 import React, {Component} from 'react';
 import {BrowserRouter as Link} from 'react-router-dom';
-import Modal from 'react-responsive-modal';
+// import Modal from 'react-responsive-modal';
+import Modal from "react-bootstrap/Modal";
 // import EditPostForm from '../components/EditPostForm';
 import PostModel from '../models/post'
 
@@ -11,8 +12,6 @@ class CityPost extends Component {
   state = {
     del: false,
     edit: false,
-    postId: null,
-    post: null
   }
 
   handleDeleteClose = () => {this.setState({del: false})}
@@ -21,12 +20,17 @@ class CityPost extends Component {
   handleEdit = () => {this.setState({edit: true})}
 
   async deletePost(post) {
-    let res = await PostModel.delete(this.state.postId);
+    console.log("deleting")
+    console.log(this.props.post._id)
+    let res = await PostModel.delete(this.props.post._id);
+    console.log(res)
     if(!res.status === 200){
       console.log('error deleting post');
     }
     this.handleDeleteClose();
+    console.log("closing modal")
     this.props.fetchPosts();
+    console.log("fetching posts")
   }
 
   render () {
@@ -58,10 +62,10 @@ class CityPost extends Component {
         <Modal id="delModal" show={del} onHide={this.handleDeleteClose}>
           <Modal.Body>
             <p>testing</p>
-            <p>{`Are you sure you want to delete ${this.props.post.title}`}</p>
+            <p>{`Are you sure you want to delete "${this.props.post.title}"?`}</p>
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn text-danger" onCLick={this.deletePost}>del Post</button>
+            <button className="btn text-danger" onClick={this.deletePost.bind(this)}>Delete Post</button>
             <button className="btn text-info" onClick={this.handleDeleteClose}>Cancel</button>
           </Modal.Footer>
         </Modal>
