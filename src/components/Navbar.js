@@ -92,6 +92,7 @@ class Navbar extends Component {
           </button>
         </Modal.Footer>
       </Modal>
+      
     </>
     );
 }

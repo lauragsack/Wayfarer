@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import CityPost from './CityPost';
 import PostModel from '../models/post'
+import CreateCityPost from './CreateCityPost'
+
+import Modal from "react-bootstrap/Modal";
 
 
 
@@ -8,6 +11,7 @@ class CityShow extends Component {
   state = {
     city: null,
     posts: [],
+    show: false,
   }
 
 componentDidUpdate(prevProps, prevState) {
@@ -28,6 +32,22 @@ componentDidUpdate(prevProps, prevState) {
     });
   }
 
+  createPost = (post) => {
+    let newPost = {
+        body: post,
+    };
+    
+    PostModel.create(newPost)
+    .then((res) => {
+        let posts = this.state.posts;
+        posts.push(res.data);
+        this.setState({ posts: posts });
+    });
+    };
+
+  handleCloseAddPost = () => this.setState({show: false});
+  handleAddPost = () => this.setState({show: true});
+
   render(){
     if(this.props.cityShow){
 
@@ -40,11 +60,12 @@ componentDidUpdate(prevProps, prevState) {
       )
 
       return(
+        <>
         <div className="shadow">
           <div className="row">
             <div className="col m-3">
               <h2>{this.props.cityShow.name}</h2>
-              <button className="btn btn-outline-primary align-self-end">Add a Post</button>
+              <button className="btn btn-outline-primary align-self-end" onClick={this.handleAddPost}>Add a Post</button>
             </div>
             <div className="col m-3">
               <img
@@ -60,6 +81,15 @@ componentDidUpdate(prevProps, prevState) {
             </div>
           </div>
         </div>
+
+      <Modal show={this.state.show} onHide={this.handleCloseAddPost}>
+          <CreateCityPost 
+            city={this.state.city} 
+            createPost={this.createPost}
+            handleCloseAddPost={this.handleCloseAddPost}
+             />
+      </Modal>
+      </>
       );
     }
     else{
