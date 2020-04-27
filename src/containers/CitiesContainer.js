@@ -43,14 +43,14 @@ class CitiesContainer extends Component {
 
     return (
       <div className="cityContainer row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 bg-yellow">
           <CityList
             cityList={this.state.cityList}
             cityId={this.cityId}
             setCity={this.setCity}
             />
         </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 bg-yellow">
           <CityShow cityShow={cityShow}/>
         </div>
       </div>
