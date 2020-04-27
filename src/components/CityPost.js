@@ -1,8 +1,8 @@
-
 import React, {Component} from 'react';
 import {BrowserRouter as Link} from 'react-router-dom';
-import Modal from 'react-responsive-modal';
-// import EditPostForm from '../components/EditPostForm';
+// import Modal from 'react-responsive-modal';
+import Modal from 'react-bootstrap/Modal';
+import EditPostForm from '../components/EditPostForm';
 import PostModel from '../models/post'
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,14 +11,21 @@ class CityPost extends Component {
   state = {
     del: false,
     edit: false,
-    postId: null,
-    post: null
   }
 
   handleDeleteClose = () => {this.setState({del: false})}
   handleDelete = () => {this.setState({del: true})}
   handleEditClose = () => {this.setState({edit: false})}
   handleEdit = () => {this.setState({edit: true})}
+
+  // async editPost(post){
+  //   let res = await PostModel.edit(this.state.postId);
+  //   if(!res.status===200){
+  //     console.log('Cannot edit post at this time.');
+  //   }
+  //   this.handleEditClose();
+  //   this.props.f
+  // }
 
   async deletePost(post) {
     let res = await PostModel.delete(this.state.postId);
@@ -48,11 +55,12 @@ class CityPost extends Component {
         </div>
         <Modal id="editModal" show={edit} onHide={this.handleEditClose}>
           <Modal.Body>
-            <p>testing</p>
-            {/*<EditPostForm onClick={this.handle}/>*/}
+            <p>Create a new post.</p>
+            <EditPostForm onClick={this.handleEdit} post={this.props.post}/>
           </Modal.Body>
           <Modal.Footer>
-            <button >Submit</button>
+          <button className="btn text-info" onClick={this.handleEditClose}>Cancel</button>
+          <button className="btn text-danger">Submit</button>
           </Modal.Footer>
         </Modal>
         <Modal id="delModal" show={del} onHide={this.handleDeleteClose}>
