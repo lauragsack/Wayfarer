@@ -1,13 +1,14 @@
 
 import React, {Component} from 'react';
 import {BrowserRouter as Link} from 'react-router-dom';
-import Modal from 'react-responsive-modal';
+import Modal from "react-bootstrap/Modal";
 // import EditPostForm from '../components/EditPostForm';
 import PostModel from '../models/post'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class CityPost extends Component {
+
   state = {
     del: false,
     edit: false,
@@ -29,11 +30,12 @@ class CityPost extends Component {
     this.props.fetchPosts();
   }
 
+
   render () {
     const {edit, del} = this.state;
     return (
       <div>
-        <div className="card">
+        <div className="card shadow col-md-10 offset-1 mt-2 mb-2">
           <h5 className="card-header">
             <p><Link to={`/posts/${this.props.post._id}`}>{this.props.post.title}</Link></p>
           </h5>
@@ -42,8 +44,8 @@ class CityPost extends Component {
           </div>
           <div className="card-footer text-muted">
             <p className="card-text">Posted by {this.props.post.user.name}</p>
-            <button className="btn btn-info float right" onClick={this.handleEdit}>Edit</button>
-            <button className="btn btn-info float right" onClick={this.handleDelete}>Delete</button>
+            <button className="btn btn-info float-right ml-2" onClick={this.handleDelete}>Delete</button>
+            <button className="btn btn-info float-right" onClick={this.handleEdit}>Edit</button>
           </div>
         </div>
         <Modal id="editModal" show={edit} onHide={this.handleEditClose}>

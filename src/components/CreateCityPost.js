@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import CityModel from '../models/city'
+import Modal from "react-bootstrap/Modal";
 
-class CreatePostForm extends Component {
-    state = {
+
+class CreateCityPost extends Component {
+
+	state = {
         title: '',
         content: '',
         city: this.props.city,
@@ -40,23 +43,17 @@ class CreatePostForm extends Component {
       }
     
     render() {
-        let cityOptions = this.state.cityList.map( (city, index) => {
-          return(
-            <option
-              key={index}
-              value={city._id}>{city.name}</option>
-          );
-        }
-      );
-    
-      if (this.state.city.id === -1){
-        cityOptions.unshift(
-          <option key={-1}></option>
-        )
-      }
-
-    return (
-        <form onSubmit={this.onFormSubmit} id="postForm">
+      let cityOptions = this.state.cityList.map( (city, index) => {
+        return(
+          <option
+            key={index}
+            value={city._id}>{city.name}</option>
+        );
+			}
+		);
+      return (
+      	<form onSubmit={this.onFormSubmit} id="postForm">
+      	<Modal.Body>
             <div className="form-group">
                 <label htmlFor="city">City</label>
                 <select
@@ -86,11 +83,14 @@ class CreatePostForm extends Component {
                     value={this.state.content}
                 />
             </div>
-
-                <button type="submit" id="addPost" className="btn">Add Post</button>
+        </Modal.Body>
+        <Modal.Footer>
+          <button className="btn text-secondary float-right" onClick={this.props.handleCloseAddPost}>Cancel</button>
+          <button type="submit" className="btn btn-outline-info float-right" onSubmit={this.onFormSubmit} onClick={this.props.handleCloseAddPost}>Add</button>
+        </Modal.Footer>
         </form>
         );
     }
 }
 
-export default CreatePostForm;
+export default CreateCityPost

@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../components/Home'
 import ProfileContainer from '../containers/ProfileContainer'
 import CitiesContainer from '../containers/CitiesContainer'
+import PostsContainer from '../containers/PostsContainer'
 
  function Routes(props){
    return(
@@ -15,6 +16,7 @@ import CitiesContainer from '../containers/CitiesContainer'
            setCurrentUser={props.setCurrentUser}
            />
        </Route>
+       <Route exact path="/posts" component={ PostsContainer }/>
        <Route path="/cities/:id?" render={routeProps =>
            <CitiesContainer
              {...routeProps}
