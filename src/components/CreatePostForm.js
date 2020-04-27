@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import CityModel from '../models/city'
 
 class CreatePostForm extends Component {
     state = {
         title: '',
         content: '',
         city: this.props.city,
+        cityList: []
     };
 
     onInputChange = (event) => {
@@ -62,7 +64,7 @@ class CreatePostForm extends Component {
                     name="city"
                     value={this.state.city.id}
                 >
-                {Cityoptions}
+                {cityOptions}
                 </select>
             </div>
             <div className="form-group">

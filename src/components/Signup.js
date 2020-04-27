@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserModel from '../models/user';
-import './styles.css'
+// import './styles.css'
 
 class Signup extends Component {
   state = {

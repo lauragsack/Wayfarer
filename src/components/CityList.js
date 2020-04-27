@@ -4,14 +4,16 @@ import CityListItem from './CityListItem';
 
 class CityList extends Component{
 
-	state={
-		city : this.props.city,
-	}
-
 	render(){
 		let listItems = this.props.cityList.map(city => {
-			return  <CityListItem key={city._id} city={city} />
-		})
+			return (
+				<CityListItem
+					key={city._id}
+					city={city}
+					setCity={this.props.setCity}
+					/>
+			);
+		});
 
 	  return (
 			<div className="shadow">
@@ -20,7 +22,7 @@ class CityList extends Component{
 					{listItems}
 				</ul>
 			</div>
-	  )
+	  );
 	}
 }
 

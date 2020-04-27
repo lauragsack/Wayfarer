@@ -3,11 +3,13 @@ import { withRouter } from 'react-router-dom'
 import Routes from './config/routes'
 import Navbar from './components/Navbar'
 import UserModel from './models/user'
+import CityModel from './models/city'
 import './App.css'
 
 class App extends Component {
   state = {
     currentUser: JSON.parse(localStorage.getItem("user")),
+    cityList: [],
   }
 
   setCurrentUser = (user) => {
@@ -29,9 +31,20 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  async fetchCityList(){
+    let response = await CityModel.all();
+    this.setState({
+      cityList: response.data
+    });
+  }
+
+  componentDidMount() {
+    this.fetchCityList();
+  }
+
   render() {
     return (
-      <>
+      <div>
         <Navbar
           currentUser={this.state.currentUser}
           logout={this.logout}
@@ -42,10 +55,10 @@ class App extends Component {
           <Routes
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}
-            name={this.state.name}
+            cityList={this.state.cityList}
           />
         </div>
-      </>
+      </div>
     );
   }
 }
