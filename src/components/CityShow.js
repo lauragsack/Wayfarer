@@ -15,28 +15,31 @@ componentDidUpdate(prevProps, prevState) {
         city: this.props.cityShow,
       })
     }
-    if(this.state.city != prevState.city){
+    if(this.state.city !== prevState.city){
       this.fetchPosts();
     }
   }
 
   async fetchPosts(){
-    let response = await PostModel.city(this.state.city._id);
+    let posts = [];
+    if (this.state.city){
+      let res = await PostModel.city(this.state.city._id);
+      posts = res.data;
+    }
     this.setState({
-      posts: response.data,
+      posts: posts,
     });
   }
 
   render(){
-    if(this.props.cityShow){
-
+    if(this.state.city){
       let posts = this.state.posts.map(post =>
         <CityPost
           key={post._id}
           post={post}
           fetchPosts={this.fetchPosts.bind(this)}
           />
-      )
+      );
 
       return(
         <div className="shadow">
