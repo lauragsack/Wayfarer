@@ -21,10 +21,17 @@ componentDidUpdate(prevProps, prevState) {
   }
 
   async fetchPosts(){
-    let response = await PostModel.city(this.props.cityShow._id);
-    this.setState({
-      posts: response.data,
-    });
+    if (this.state.city){
+      let response = await PostModel.city(this.state.city._id);
+      this.setState({
+        posts: response.data,
+      });
+    }
+    else{
+      this.setState({
+        posts: []
+      });
+    }
   }
 
   render(){
