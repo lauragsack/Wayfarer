@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../components/Home'
 import ProfileContainer from '../containers/ProfileContainer'
 import CitiesContainer from '../containers/CitiesContainer'
-import City from '../components/City'
 
  function Routes(props){
    return(
