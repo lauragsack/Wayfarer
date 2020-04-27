@@ -8,9 +8,9 @@
   text-shadow: 0 0 20px black;
 }
 
-body {
+/* body {
   background-color: #bdeff1;
-}
+} */
 
 .bg-dark {
   background-color: #142446 !important;
@@ -20,7 +20,7 @@ body {
   color: #bdeff1 !important;
 }
 
-.selected-city {
+/* .selected-city {
   color: #bdeff1;
   background-color: #142446;
 }
@@ -31,4 +31,4 @@ body {
 
 .current-city {
   background-color: #8aa39b;
-}
+} */
