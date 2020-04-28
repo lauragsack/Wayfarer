@@ -9,7 +9,9 @@ import CitiesContainer from '../containers/CitiesContainer'
  function Routes(props){
    return(
      <Switch>
-       <Route exact path="/" component={ Home }/>
+       <Route exact path="/">
+         <Home cityList={props.cityList} />
+       </Route>
        <Route path="/profile">
          <ProfileContainer
            currentUser={props.currentUser}

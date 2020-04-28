@@ -75,7 +75,7 @@ class PostsContainer extends Component{
 
     return(
       <div>
-        <div className="card">
+        <div className="card m-3">
           <div className="row">
             <div className="col">
               <div

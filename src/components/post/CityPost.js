@@ -15,7 +15,7 @@ class CityPost extends Component {
     let postDate = Intl.DateTimeFormat('en-US').format(new Date(this.props.post.createdAt));
 
     return (
-      <div className="card mt-2">
+      <div className="card mt-3 mx-3">
         <div className="row">
           <div className="col">
             <div className="card-header navbar navbar-light bg-light">
@@ -43,7 +43,7 @@ class CityPost extends Component {
           <p className="card-text">{this.props.post.content}</p>
         </div>
         <div className="card-footer text-muted">
-          <small className="card-text">
+          <small className="card-text font-italic">
             Posted by {this.props.post.user.name} on {postDate}
           </small>
         </div>

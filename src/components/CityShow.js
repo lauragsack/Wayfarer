@@ -40,7 +40,7 @@ class CityShow extends Component {
   render(){
     if(this.props.city){
       return(
-        <div className="shadow rounded-bottom">
+        <div className="shadow rounded-bottom pb-3">
           <div className="row">
             <div className="col m-3">
               <h2>{this.props.city.name}</h2>
