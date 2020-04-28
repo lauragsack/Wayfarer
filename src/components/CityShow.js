@@ -11,11 +11,17 @@ class CityShow extends Component {
 
   componentDidUpdate() {
     if(this.state.city !== this.props.city){
-      console.log('update');
       this.setState({
         city: this.props.city,
       })
-      this.fetchPosts(this.props.city._id);
+      if(this.props.city){
+        this.fetchPosts(this.props.city._id);
+      }
+      else{
+        this.setState({
+          props: [],
+        });
+      }
     }
   }
 

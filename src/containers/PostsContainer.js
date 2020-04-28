@@ -10,6 +10,7 @@ class PostsContainer extends Component{
   }
 
   setAction(action, post){
+    console.log(post);
     this.setState({
       action,
       post,
@@ -19,28 +20,25 @@ class PostsContainer extends Component{
   setActionCreate(){
     this.setState({
       action: 'create',
-      post: null,
+      post: {
+        id: '',
+        title: '',
+        content: '',
+        city: (this.props.city ? this.props.city._id : ''),
+      }
     });
   }
 
   async createPost(post){
-    console.log('create');
-    console.log(post);
-    await PostModel.create(post);
-    this.props.fetchPosts();
+    let res = await PostModel.create(post);
   }
 
   async editPost(post){
-    this.props.fetchPosts();
+    let res = await PostModel.update(post);
   }
 
   async deletePost(post) {
-    let res = await PostModel.delete(this.props.post._id);
-    if(!res.status === 200){
-      console.log('error deleting post');
-    }
-    this.handleDeleteClose();
-    this.props.fetchPosts();
+    let res = await PostModel.delete(post._id);
   }
 
   closeForm(){
@@ -66,16 +64,13 @@ class PostsContainer extends Component{
         />
     );
 
-    let form = <div/>
-    if (this.state.action !== 'close'){
-      form = <PostForm
-        city={this.props.city._id}
+    let form = <PostForm
+        city={this.props.city}
         post={this.state.post}
         action={this.state.action}
         cityList={this.props.cityList}
         postMethods={this.postMethods}
         />
-    }
 
     return(
       <div>

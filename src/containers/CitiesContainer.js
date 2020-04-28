@@ -4,7 +4,7 @@ import CityShow from '../components/CityShow';
 
 class CitiesContainer extends Component {
   state={
-    cityId: this.props.match.params.id,
+    cityId: '',
 	}
 
   componentDidUpdate() {
