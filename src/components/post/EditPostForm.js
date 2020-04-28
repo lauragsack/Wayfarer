@@ -9,6 +9,8 @@ function EditPostForm(props){
           onChange={props.onInputChange}
           name="title"
           value={props.post.title}
+          maxLength={200}
+          required={true}
           placeholder="Enter a post title."
           />
         <small id="postTitleHelp" className="form-text text-muted">Post titles must be between 1 and 200 characters long.</small>
@@ -32,7 +34,10 @@ function EditPostForm(props){
           type="text"
           name="content"
           value={props.post.content}
-          placeholder= "Enter text here."></textarea>
+          placeholder= "Enter text here."
+          required={true}
+          >
+          </textarea>
         <small className="form-text text-muted">Enter your post content here.</small>
       </div>
     </div>

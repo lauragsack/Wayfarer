@@ -94,7 +94,7 @@ class PostForm extends Component {
 						type="submit"
 						className="btn btn-outline-info float-right"
 						onClick={this.submitForm.bind(this)}>
-						Add
+						Submit
 					</button>
 				</Modal.Footer>
 			</Modal>
