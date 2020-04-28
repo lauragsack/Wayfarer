@@ -75,16 +75,19 @@ class PostsContainer extends Component{
 
     return(
       <div>
-        <div className="row">
-          <div className="col">
-            <div className="navbar navbar-dark bg-dark">
-              <div className="navbar-brand mr-auto">
-                Posts
+        <div className="card">
+          <div className="row">
+            <div className="col">
+              <div
+                className="card-header navbar navbar-dark bg-dark rounded mb-">
+                <div className="navbar-brand mr-auto">
+                  Posts
+                </div>
+                <button
+                  className="btn btn-light fas fa-plus"
+                  onClick={this.setActionCreate.bind(this)}
+                  />
               </div>
-              <button
-                className="btn btn-light fas fa-plus"
-                onClick={this.setActionCreate.bind(this)}
-                />
             </div>
           </div>
         </div>

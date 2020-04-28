@@ -25,7 +25,7 @@ class CitiesContainer extends Component {
         <div className="col-lg-4">
           <CityList
             cityList={this.props.cityList}
-            cityId={this.cityId}
+            cityId={this.state.cityId}
             />
         </div>
         <div className="col-lg-8">

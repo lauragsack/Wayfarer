@@ -40,14 +40,14 @@ class CityShow extends Component {
   render(){
     if(this.props.city){
       return(
-        <div className="shadow">
+        <div className="shadow rounded-bottom">
           <div className="row">
             <div className="col m-3">
               <h2>{this.props.city.name}</h2>
             </div>
             <div className="col m-3">
               <img
-                className="rounded-lg"
+                className="rounded-lg shadow"
                 src={this.props.city.images.header.src}
                 alt={this.props.city.name}
                 />

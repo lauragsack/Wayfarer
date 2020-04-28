@@ -12,30 +12,40 @@ class CityPost extends Component {
   }
 
   render () {
+    let postDate = Intl.DateTimeFormat('en-US').format(new Date(this.props.post.createdAt));
+
     return (
-      <div className="card">
-        <h5 className="card-header">
-          <p><Link to={`/posts/${this.props.post._id}`}>
-            {this.props.post.title}
-          </Link></p>
-        </h5>
+      <div className="card mt-2">
+        <div className="row">
+          <div className="col">
+            <div className="card-header navbar navbar-light bg-light">
+              <Link
+                className="navbar-brand mr-auto"
+                to={`/posts/${this.props.post._id}`}>
+                {this.props.post.title}
+              </Link>
+              <div className="btn-group">
+                <button
+                  className="btn btn-dark fas fa-pen"
+                  name='edit'
+                  onClick={this.setAction.bind(this)}
+                  />
+                <button
+                  className="btn btn-dark fas fa-trash-alt"
+                  name='delete'
+                  onClick={this.setAction.bind(this)}
+                  />
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="card-body">
           <p className="card-text">{this.props.post.content}</p>
         </div>
         <div className="card-footer text-muted">
-          <p className="card-text">Posted by {this.props.post.user.name}</p>
-          <button
-            className="btn btn-info float right"
-            name="edit"
-            onClick={this.setAction.bind(this)}>
-            Edit
-          </button>
-          <button
-            className="btn btn-info float right"
-            name="delete"
-            onClick={this.setAction.bind(this)}>
-            Delete
-          </button>
+          <small className="card-text">
+            Posted by {this.props.post.user.name} on {postDate}
+          </small>
         </div>
       </div>
     );

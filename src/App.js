@@ -4,7 +4,7 @@ import Routes from './config/routes'
 import Navbar from './components/Navbar'
 import UserModel from './models/user'
 import CityModel from './models/city'
-import './App.css'
+import './scss/custom.scss'
 
 class App extends Component {
   state = {
