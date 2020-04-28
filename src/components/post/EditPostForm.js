@@ -34,6 +34,7 @@ function EditPostForm(props){
         <label htmlFor="Content align-top"><strong>Content</strong></label>
         <div>
         <textarea
+          className="col-md-10"
           rows="5"
           onChange={props.onInputChange}
           type="text"
