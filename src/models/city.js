@@ -7,4 +7,9 @@ export default class CityModel {
   	let request = axios.get(`${REACT_APP_API_URL}`);
   	return request;
   }
+
+  static show = (city) => {
+    let request = axios.get(`${REACT_APP_API_URL}/${city}`);
+    return request;
+  }
 }
