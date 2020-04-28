@@ -40,6 +40,7 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchCityList();
+    // let user = await UserModel.verify();
   }
 
   render() {

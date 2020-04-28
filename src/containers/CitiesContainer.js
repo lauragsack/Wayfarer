@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CityList from '../components/CityList';
-import CityShow from '../components/CityShow';
+import CityList from '../components/city/CityList';
+import CityShow from '../components/city/CityShow';
 
 class CitiesContainer extends Component {
   state={

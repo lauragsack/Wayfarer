@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import Modal from "react-bootstrap/Modal";
-import PostModel from '../models/post';
-import PostsContainer from '../containers/PostsContainer'
+import PostModel from '../../models/post';
+import PostsContainer from '../../containers/PostsContainer'
 
 class CityShow extends Component {
   state = {
