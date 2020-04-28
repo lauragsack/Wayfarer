@@ -36,11 +36,16 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarsExample04">
             <ul className="navbar-nav ml-auto">
 
+            <li className= "nav-item">
+                <NavLink className="nav-link" to="/cities">Cities</NavLink>
+                </li>
+
               { this.props.currentUser ?
               <>
             <li className="nav-item">
                 <NavLink className="nav-link" to="/profile">Profile</NavLink>
               </li>
+              
               <li className="nav-item">
                 <a className="nav-link" href="/logout" onClick={this.props.logout}>Logout</a>
               </li>

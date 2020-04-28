@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PostModel from '../models/post';
-import Post from '../components/Post';
+import ProfilePost from './ProfilePost';
 
 class ProfilePosts extends Component {
     state = {
@@ -23,10 +23,10 @@ class ProfilePosts extends Component {
     render() {
         let posts = this.state.posts.map((post) => {
         return (
-            <Post
+            <ProfilePost
                 key={post._id}
                 post={post}
-            /> 
+            />
         );
     });
     return (
@@ -39,5 +39,3 @@ class ProfilePosts extends Component {
 }
 
 export default ProfilePosts;
-
-
