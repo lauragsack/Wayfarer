@@ -3,8 +3,9 @@ import React from 'react';
 function EditPostForm(props){
   return(
     <div>
-      <div className="form-group">
-        <label htmlFor="Title">Title</label>
+      <div className="form-group mt-4 ml-5">
+        <label htmlFor="Title"><strong>Title</strong></label>
+        <div>
         <input
           onChange={props.onInputChange}
           name="title"
@@ -15,8 +16,11 @@ function EditPostForm(props){
           />
         <small id="postTitleHelp" className="form-text text-muted">Post titles must be between 1 and 200 characters long.</small>
       </div>
-      <div className="form-group">
-        <label htmlFor="City">City</label>
+      </div>
+      <hr/>
+      <div className="form-group mt-4 ml-5">
+        <label htmlFor="City"><strong>City</strong></label>
+        <div>
         <select
           onChange={props.onInputChange}
           name="city"
@@ -25,10 +29,14 @@ function EditPostForm(props){
           {props.cityOptions}
         </select>
         <small className="form-text text-muted">Select a city.</small>
+        </div>
       </div>
-      <div className="form-group">
-        <label htmlFor="Content">Content</label>
+      <hr/>
+      <div className="form-group mt-4 ml-5">
+        <label htmlFor="Content align-top"><strong>Content</strong></label>
+        <div>
         <textarea
+          className="col-md-10"
           rows="5"
           onChange={props.onInputChange}
           type="text"
@@ -39,6 +47,7 @@ function EditPostForm(props){
           >
           </textarea>
         <small className="form-text text-muted">Enter your post content here.</small>
+        </div>
       </div>
     </div>
   );

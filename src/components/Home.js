@@ -3,11 +3,29 @@ import Slide from './Slide';
 
 class Home extends Component {
 
+	citySlides = [
+		{
+			image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
+			name: "London",
+		},
+		{
+			image: "https://images.unsplash.com/photo-1503152889424-9c280f38cb1c",
+			name: "Gibraltar",
+		},
+		{
+			image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
+			name: "London",
+		},
+		{
+			image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+			name: "Sydney",
+		},
+	]
 
 	render(){
 
 		let carouselIndicators = [];
-		for(let i = 0; i < this.props.cityList.length; i++){
+		for(let i = 0; i < this.citySlides.length; i++){
 			carouselIndicators.push(
 				<li
 					key={i}
@@ -18,12 +36,12 @@ class Home extends Component {
 			)
 		}
 
-		let slides = this.props.cityList.map( (city, index) => {
+		let slides = this.citySlides.map( (slide, index) => {
 			return <Slide
-				key={city._id}
+				key={index}
 				active={index===0 ? 'active' : ''}
-				image={city.images.carousel.src}
-				name={city.name} />
+				image={slide.image}
+				name={slide.name} />
 		});
 
 		return (
