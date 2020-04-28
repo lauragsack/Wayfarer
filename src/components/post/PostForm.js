@@ -81,8 +81,7 @@ class PostForm extends Component {
 
 	render() {
 		return (
-			<Modal show={this.props.action !== 'close'}>
-				test
+			<Modal show={this.props.action !== 'close'} onHide={this.closeForm.bind(this)}>
 				{this.buildForm()}
 				<Modal.Footer>
 					<button
@@ -94,7 +93,7 @@ class PostForm extends Component {
 						type="submit"
 						className="btn btn-outline-info float-right"
 						onClick={this.submitForm.bind(this)}>
-						Add
+						Confirm
 					</button>
 				</Modal.Footer>
 			</Modal>
