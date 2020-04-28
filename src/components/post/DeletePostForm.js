@@ -2,7 +2,7 @@ import React from 'react';
 
 function DeletePostForm(props){
   return(
-    <h1>Are you sure you want to delete</h1>
+    <h6>Are you sure you want to delete this post?</h6>
   )
 }
 
