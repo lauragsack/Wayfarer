@@ -46,6 +46,7 @@ class PostsContainer extends Component{
       action: 'close',
       post: null,
     })
+    this.props.fetchPosts(this.props.city._id);
   }
 
   postMethods = {

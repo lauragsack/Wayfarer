@@ -69,10 +69,9 @@ class PostForm extends Component {
 
 	async submitForm(event){
 		event.preventDefault();
-		let res = await this.props.postMethods[this.props.action](
+		await this.props.postMethods[this.props.action](
 			this.state.post
 		);
-		console.log('submitForm', res);
 		this.closeForm();
 	}
 

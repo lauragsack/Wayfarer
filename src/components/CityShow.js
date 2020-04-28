@@ -26,9 +26,14 @@ class CityShow extends Component {
   }
 
   async fetchPosts(cityId){
-    let response = await PostModel.city(cityId);
+    let res = await PostModel.city(cityId);
+    let posts = res.data.sort((a, b) => {
+      a = (new Date(a.createdAt)).valueOf();
+      b = (new Date(b.createdAt)).valueOf();
+      return b - a;
+    });
     this.setState({
-      posts: response.data,
+      posts,
     });
   }
 
