@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import Modal from "react-bootstrap/Modal";
-import CreatePostForm from './CreatePostForm';
 import EditPostForm from './EditPostForm';
 import DeletePostForm from './DeletePostForm';
 
 
+
 class PostForm extends Component {
-	state = {
-		postForm: <div/>,
+
+	emptyPost = {
+		id: '',
 		title: '',
 		content: '',
-		// city: this.props.post.city,
+		city: this.props.city,
+	}
+
+	state = {
+		postForm: (<div/>),
+		post: (this.props.post || this.emptyPost),
 	};
 
 	componentDidMount() {
@@ -25,66 +31,68 @@ class PostForm extends Component {
 			);
 		});
 
-		let form = <div/>
-		switch (this.props.modalForm){
+		this.setState({
+			cityOptions
+		});
+	}
+
+	buildForm(){
+		let form = <div/>;
+		switch (this.props.action){
+			case 'create':
 			case 'edit':
 				form = <EditPostForm
-					post={this.props.post}
-					cityOptions={cityOptions}
-					onFormSubmit={this.onFormSubmit.bind(this)}
+					post={this.state.post}
+					cityOptions={this.state.cityOptions}
 					onInputChange={this.onInputChange.bind(this)}
 					/>
 				break;
 			case 'delete':
 				form = <DeletePostForm
-					post={this.props.post}
-					onFormSubmit={this.onFormSubmit.bind(this)}
+					post={this.state.post}
 					/>
 				break;
-			case 'create':
-				form = <CreatePostForm
-					cityOptions={cityOptions}
-					onFormSubmit={this.onFormSubmit.bind(this)}
-					onInputChange={this.onInputChange.bind(this)}
-					/>;
-				break;
 			default:
-				return (form);
 		}
 
-		this.setState({
-			postForm: form
-		});
+		return(form);
 	}
 
 	onInputChange = (event) => {
+		let post = this.state.post;
+		post[event.target.name]= event.target.value;
+
 		this.setState({
-			[event.target.name]: event.target.value,
+			post
 		});
 	}
 
-	onFormSubmit = (event) => {
-		console.log(this.state)
+	submitForm = (event) => {
 		event.preventDefault();
-		let post = this.state;
-		this.props.createPost(post);
-		// this.setState({
-		// 	title: '',
-		// 	content: '',
-		// 	city: '',
-		// })
+		this.props.postMethods[this.props.action](this.state.post);
+	}
+
+	closeForm(){
+		this.props.postMethods.close();
 	}
 
 	render() {
-
-
 		return (
 			<div>
-			{this.state.postForm}
+			{this.buildForm()}
 
 			<Modal.Footer>
-			<button className="btn text-secondary float-right" onClick={this.props.handleCloseAddPost}>Cancel</button>
-			<button type="submit" className="btn btn-outline-info float-right" onSubmit={this.onFormSubmit} onClick={this.props.handleCloseAddPost}>Add</button>
+				<button
+					className="btn text-secondary float-right"
+					onClick={this.closeForm.bind(this)}>
+					Cancel
+				</button>
+				<button
+					type="submit"
+					className="btn btn-outline-info float-right"
+					onClick={this.submitForm}>
+					Add
+				</button>
 			</Modal.Footer>
 			</div>
 		);

@@ -1,91 +1,58 @@
 import React, { Component } from 'react';
-import CityPost from './CityPost';
+// import Modal from "react-bootstrap/Modal";
 import PostModel from '../models/post';
-import PostForm from './post/PostForm';
-
-import Modal from "react-bootstrap/Modal";
-
-
+import PostsContainer from '../containers/PostsContainer'
 
 class CityShow extends Component {
   state = {
-    city: null,
+    city: this.props.city,
     posts: [],
-    show: false,
   }
 
-componentDidUpdate(prevProps, prevState) {
-    if(this.state.city !== this.props.cityShow){
+  componentDidUpdate() {
+    if(this.state.city !== this.props.city){
+      console.log('update');
       this.setState({
-        city: this.props.cityShow,
+        city: this.props.city,
       })
-    }
-    if(this.state.city != prevState.city){
-      this.fetchPosts();
+      this.fetchPosts(this.props.city._id);
     }
   }
 
-  async fetchPosts(){
-    let response = await PostModel.city(this.props.cityShow._id);
+  async fetchPosts(cityId){
+    let response = await PostModel.city(cityId);
     this.setState({
       posts: response.data,
     });
   }
 
-  async createPost(post){
-    await PostModel.create(post);
-    this.fetchPosts();
-  }
-
-  handleCloseAddPost = () => this.setState({show: false});
-  handleAddPost = () => this.setState({show: true});
-
   render(){
-    if(this.props.cityShow){
-
-      let posts = this.state.posts.map(post =>
-        <CityPost
-          key={post._id}
-          post={post}
-          fetchPosts={this.fetchPosts}
-          cityList={this.props.cityList}
-          />
-      )
-
-      let form = <div/>
-      if (this.state.show){
-        form = <PostForm
-          cityList={this.props.cityList}
-          postForm="create"
-          createPost={this.createPost.bind(this)}
-          />
-      }
-
+    if(this.props.city){
       return(
-        <>
         <div className="shadow">
           <div className="row">
             <div className="col m-3">
-              <h2>{this.props.cityShow.name}</h2>
-              <button className="btn btn-outline-primary align-self-end" onClick={this.handleAddPost}>Add a Post</button>
+              <h2>{this.props.city.name}</h2>
             </div>
             <div className="col m-3">
               <img
                 className="rounded-lg"
-                src={this.props.cityShow.images.header.src}
-                alt={this.props.cityShow.name}
+                src={this.props.city.images.header.src}
+                alt={this.props.city.name}
                 />
             </div>
           </div>
           <div className="row">
             <div className="col">
-              {posts}
+              <PostsContainer
+                city={this.state.city}
+                cityList={this.props.cityList}
+                posts={this.state.posts}
+                fetchPosts={this.fetchPosts.bind(this)}
+                />
             </div>
           </div>
         </div>
-        {form}
-
-      </>
       );
     }
     else{
@@ -99,9 +66,8 @@ componentDidUpdate(prevProps, prevState) {
         </div>
       )
     }
+  }
 }
-}
-
 
 export default CityShow;
 

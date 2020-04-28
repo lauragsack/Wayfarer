@@ -9,7 +9,6 @@ class CityList extends Component{
 				<CityListItem
 					key={city._id}
 					city={city}
-					setCity={this.props.setCity}
 					/>
 			);
 		});

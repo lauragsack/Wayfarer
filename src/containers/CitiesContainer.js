@@ -4,56 +4,35 @@ import CityShow from '../components/CityShow';
 
 class CitiesContainer extends Component {
   state={
-    cityList: [],
-    cityId: null,
+    cityId: this.props.match.params.id,
 	}
 
-  componentDidMount() {
-    this.setState({
-      cityId: this.props.match.params.id,
-    })
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    let newState = {};
-
-    if(this.state.cityList !== this.props.cityList){
-      newState.cityList = this.props.cityList;
+  componentDidUpdate() {
+    let cityId = this.props.match.params.id
+    if(cityId !== this.state.cityId){
+      this.setState({
+        cityId,
+        city: this.props.cityList.find( city =>
+            city._id === cityId
+          ),
+      });
     }
-
-    if(this.state.cityId !== this.props.match.params.id){
-      newState.cityId = this.props.match.params.id;
-    }
-
-    if(Object.values(newState).length){
-      this.setState(newState);
-    }
-  }
-
-  setCity(cityId){
-    this.setState({
-      cityId
-    });
   }
 
   render() {
-    let cityShow = this.state.cityList.find( city =>
-      city._id === this.state.cityId
-    )
-
     return (
       <div className="cityContainer row">
-        <div className="col-lg-4 bg-yellow">
+        <div className="col-lg-4">
           <CityList
-            cityList={this.state.cityList}
+            cityList={this.props.cityList}
             cityId={this.cityId}
-            setCity={this.setCity}
             />
         </div>
-        <div className="col-lg-8 bg-yellow">
-          <CityShow cityShow={cityShow}
-          cityList={this.state.cityList}
-          />
+        <div className="col-lg-8">
+          <CityShow
+            city={this.state.city}
+            cityList={this.props.cityList}
+            />
         </div>
       </div>
     );
