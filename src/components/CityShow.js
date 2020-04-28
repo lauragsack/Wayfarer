@@ -64,9 +64,9 @@ componentDidUpdate(prevProps, prevState) {
                   alt={this.props.cityShow.name}
                   />
               </div>
-              <div className="carousel-caption shadow">
+              <div className="carousel-caption d-none d-md-block">
                 <h2 className="font-weight-bold sansserif">{this.props.cityShow.name}</h2>
-                <button className="btn btn-outline-light" onClick={this.handleAddPost}>Add a Post</button>
+                <button className="btn btn-outline-light" onClick={this.handleAddPost}><strong>Add a Post</strong></button>
               </div>
             </div>
           </div>

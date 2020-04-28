@@ -35,7 +35,7 @@ class CityPost extends Component {
     const {edit, del} = this.state;
     return (
       <div>
-        <div className="card shadow col-md-10 offset-1 mt-2 mb-2">
+        <div className="card shadow col-md-10 offset-1 mt-2 mb-2 pl-0 pr-0">
           <h5 className="card-header">
             <p><Link to={`/posts/${this.props.post._id}`}>{this.props.post.title}</Link></p>
           </h5>

@@ -13,8 +13,8 @@ class Home extends Component {
 			name: "Gibraltar",
 		},
 		{
-			image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
-			name: "London",
+			image: "https://images.unsplash.com/photo-1423347673683-ccdb7f6a948f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
+			name: "San Francisco",
 		},
 		{
 			image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
