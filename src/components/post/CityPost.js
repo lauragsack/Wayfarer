@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import Modal from "react-bootstrap/Modal";
 
 
 class CityPost extends Component {
@@ -16,7 +15,7 @@ class CityPost extends Component {
     return (
       <div className="card">
         <h5 className="card-header">
-          <p><Link to={`/posts/{this.props.post._id}`}>
+          <p><Link to={`/posts/${this.props.post._id}`}>
             {this.props.post.title}
           </Link></p>
         </h5>

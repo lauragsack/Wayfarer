@@ -30,15 +30,15 @@ class PostsContainer extends Component{
   }
 
   async createPost(post){
-    let res = await PostModel.create(post);
+    await PostModel.create(post);
   }
 
   async editPost(post){
-    let res = await PostModel.update(post);
+    await PostModel.update(post);
   }
 
   async deletePost(post) {
-    let res = await PostModel.delete(post._id);
+    await PostModel.delete(post._id);
   }
 
   closeForm(){
