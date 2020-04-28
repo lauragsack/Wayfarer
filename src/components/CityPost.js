@@ -39,7 +39,7 @@ class CityPost extends Component {
             <p className="card-text">{this.props.post.content}</p>
           </div>
           <div className="card-footer text-muted">
-            <p className="card-text">Posted by {this.props.post.user.name}</p>
+    <p className="card-text">Posted by {this.props.post.user.name}</p>
             <button className="btn btn-info float right" onClick={this.handleEdit}>Edit</button>
             <button className="btn btn-info float right" onClick={this.handleDelete}>Delete</button>
           </div>
